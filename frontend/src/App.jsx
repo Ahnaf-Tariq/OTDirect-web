@@ -5,6 +5,8 @@ import Home from './pages/Home'
 import Navbar from './components/navbar/Navbar'
 import Contact from './pages/Contact'
 import About from './pages/About'
+import 'leaflet/dist/leaflet.css';
+
 
 const App = () => {
   return (

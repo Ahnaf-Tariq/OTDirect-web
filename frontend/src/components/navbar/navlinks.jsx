@@ -1,5 +1,5 @@
 const navLinks = [
-  { title: "Home" },
+  { title: "Home", path: "/" },
   {
     title: "Properties",
     subMenu: true,
@@ -22,8 +22,8 @@ const navLinks = [
       { title: "Privacy Policy" },
     ],
   },
-  { title: "Contact Us" },
-  { title: "About Us" },
+  { title: "Contact Us", path: "contact-us" },
+  { title: "About Us", path: "about-us" },
 ];
 
 export default navLinks;

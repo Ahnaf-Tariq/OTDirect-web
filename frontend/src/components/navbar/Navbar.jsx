@@ -3,19 +3,21 @@ import { CgProfile } from "react-icons/cg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import navLinks from "./navlinks";
 
 const Navbar = () => {
   const [sideBar, setSideBar] = useState(false);
   const [sideBarLinks, setSideBarLinks] = useState(null);
+  const navigate = useNavigate();
   return (
     <>
       <nav className="bg-orange-800 h-20">
         <div className="flex justify-between items-center max-w-[1500px] mx-auto px-6">
           <div className="">
             <img
-              className="brightness-0 invert"
+              onClick={() => navigate("/")}
+              className="brightness-0 invert cursor-pointer"
               src="https://otdirect.vercel.app/logoOTDirect.svg"
               alt="logo"
             />
@@ -23,16 +25,13 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center gap-6 text-white">
             <ul className="flex items-center gap-8 text-lg font-semibold cursor-pointer">
               {navLinks.map((links, index) => (
-                <div key={index}>
-                  <div
-                    onClick={() => setSideBarLinks(!sideBarLinks)}
-                    className="flex items-center gap-1"
-                  >
+                <div key={index} className="relative group">
+                  <NavLink to={links.path} className="flex items-center gap-1">
                     {links.title}
                     {links.subMenu && <RiArrowDropDownLine />}
-                  </div>
-                  {links.subMenu && sideBarLinks === true && (
-                    <div className="w-56 text-gray-500 left-[-20px] p-2">
+                  </NavLink>
+                  {links.subMenu && (
+                    <div className="absolute hidden group-hover:block border rounded-md shadow-lg w-56 bg-white text-gray-500 left-[-20px] p-2">
                       {links.subLinks.map((sublink, ind) => (
                         <li
                           key={ind}
@@ -81,17 +80,19 @@ const Navbar = () => {
           <ul className="flex flex-col gap-4 p-6 text-lg font-semibold cursor-pointer">
             {navLinks.map((links, index) => (
               <div key={index}>
-                <div
-                  onClick={() =>
+                <NavLink
+                  to={links.path}
+                  onClick={() => {
+                    setSideBar(false)
                     setSideBarLinks(
                       sideBarLinks === links.title ? null : links.title
                     )
-                  }
+                  }}
                   className="flex items-center gap-1"
                 >
                   {links.title}
                   {links.subMenu && <RiArrowDropDownLine />}
-                </div>
+                </NavLink>
                 {links.subMenu && sideBarLinks === links.title && (
                   <div className="ml-4 mt-2 p-2 font-normal">
                     {links.subLinks.map((sublinks, ind) => (
