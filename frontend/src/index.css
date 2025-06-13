@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+Navlink {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  padding-bottom: 4px;
+}
+
+NavLink.active{
+    border-bottom: 2px solid white;
+}

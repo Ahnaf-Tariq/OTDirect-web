@@ -3,6 +3,8 @@ import { CgProfile } from "react-icons/cg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import { NavLink } from "react-router-dom";
+import navLinks from "./navlinks";
 
 const Navbar = () => {
   const [sideBar, setSideBar] = useState(false);
@@ -19,7 +21,27 @@ const Navbar = () => {
           </div>
           <div className="hidden lg:flex items-center gap-6 text-white">
             <ul className="flex items-center gap-8 text-lg font-semibold cursor-pointer">
-              <li>Home</li>
+              {navLinks.map((links, index) => (
+                <div key={index} className="relative group">
+                  <NavLink className="flex items-center gap-1">
+                    {links.title}
+                    {links.subMenu && <RiArrowDropDownLine />}
+                  </NavLink>
+                  {links.subMenu && (
+                    <div className="absolute hidden group-hover:block border rounded-md shadow-lg w-56 bg-white text-gray-500 left-[-20px] mt-2 p-2">
+                      {links.subLinks.map((sublink, i) => (
+                        <li
+                          key={i}
+                          className="p-[4px] hover:text-orange-800 text-base"
+                        >
+                          {sublink.title}
+                        </li>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+              {/* <NavLink to='/'>Home</NavLink>
               <div className="relative group">
                 <li className="flex items-center gap-1">Properties <RiArrowDropDownLine /></li>
                 <div className="absolute hidden group-hover:block border rounded-md shadow-lg w-52 bg-white text-gray-500 left-[-20px] mt-2 p-2">
@@ -40,8 +62,8 @@ const Navbar = () => {
                   <li className="p-[4px] hover:text-orange-800 text-base">Privacy Policy</li>
                 </div>
               </div>
-              <li>Contact Us</li>
-              <li>About Us</li>
+              <NavLink to='contact-us'>Contact Us</NavLink>
+              <NavLink to='about-us'>About Us</NavLink> */}
             </ul>
             <button className="rounded h-10 px-2 font-semibold text-orange-800 bg-white cursor-pointer">
               <span className="text-xl">+</span> Add Property
