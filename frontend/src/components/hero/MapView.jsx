@@ -4,7 +4,7 @@ const MapView = () => {
   const position = [24.8607, 67.0011]; // Example: Karachi
 
   return (
-    <div className="w-full h-full p-4">
+    <div className="w-full h-full">
       <div className="h-[90vh] rounded-xl overflow-hidden shadow-lg">
         <MapContainer
           center={position}
@@ -17,10 +17,7 @@ const MapView = () => {
             url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
           />
           <Marker position={position}>
-            <Popup>
-              Karachi, Pakistan
-              <br /> This is a marker.
-            </Popup>
+            <Popup>Karachi, Pakistan</Popup>
           </Marker>
         </MapContainer>
       </div>
