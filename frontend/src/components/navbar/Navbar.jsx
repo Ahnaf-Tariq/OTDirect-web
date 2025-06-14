@@ -12,7 +12,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   return (
     <>
-      <nav className="bg-orange-800 h-20">
+      <nav className="bg-orange-800 ">
         <div className="flex justify-between items-center max-w-[1500px] mx-auto px-6">
           <div className="">
             <img
@@ -31,11 +31,11 @@ const Navbar = () => {
                     {links.subMenu && <RiArrowDropDownLine />}
                   </NavLink>
                   {links.subMenu && (
-                    <div className="absolute hidden group-hover:block border rounded-md shadow-lg w-56 bg-white text-gray-500 left-[-20px] p-2">
+                    <div className="absolute z-[999] hidden group-hover:block border rounded-md shadow-lg w-52 bg-white text-gray-500 left-[-20px] p-2 ">
                       {links.subLinks.map((sublink, ind) => (
                         <li
                           key={ind}
-                          className="p-[4px] hover:text-orange-800 text-base"
+                          className="p-[6px] hover:text-orange-800 text-base"
                         >
                           {sublink.title}
                         </li>
@@ -45,10 +45,10 @@ const Navbar = () => {
                 </div>
               ))}
             </ul>
-            <button className="rounded h-10 px-2 font-semibold text-orange-800 bg-white cursor-pointer">
+            <button className="rounded p-2 font-semibold text-orange-800 bg-white cursor-pointer">
               <span className="text-xl">+</span> Add Property
             </button>
-            <button className="rounded h-10 px-2 text-2xl font-semibold text-orange-800 bg-white cursor-pointer">
+            <button className="rounded p-2 text-2xl font-semibold text-orange-800 bg-white cursor-pointer">
               <CgProfile />
             </button>
           </div>
