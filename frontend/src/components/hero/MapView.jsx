@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from "react-leaflet";
 
 const MapView = () => {
   const position = [24.8607, 67.0011]; // Example: Karachi
@@ -19,6 +19,7 @@ const MapView = () => {
           <Marker position={position}>
             <Popup>Karachi, Pakistan</Popup>
           </Marker>
+            <ZoomControl position="topright" />
         </MapContainer>
       </div>
     </div>

@@ -33,7 +33,7 @@ const LeftSideHero = () => {
         />
       </div>
       <hr className="my-4 text-gray-400" />
-      <div className="flex justify-evenly">
+      <div className="flex justify-evenly ">
         <input
           type="text"
           placeholder="Search an area"

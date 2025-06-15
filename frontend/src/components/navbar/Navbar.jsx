@@ -64,7 +64,7 @@ const Navbar = () => {
       {/* ********************** Sidebar *************************** */}
       {sideBar && (
         <div
-          className={`fixed top-0 left-0 h-full w-60 sm:w-96 bg-orange-800 text-white z-10`}
+          className={`fixed top-0 left-0 z-[999] h-full w-60 sm:w-96 bg-orange-800 text-white `}
         >
           <div className="flex justify-between items-center px-6 py-4 border-b border-orange-300">
             <img
