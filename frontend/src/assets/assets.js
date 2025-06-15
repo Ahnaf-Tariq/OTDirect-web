@@ -55,7 +55,8 @@ const Properties = [
   },
   {
     _id: "aaaf",
-    title: "Fully furnished and renovated Top floor 4000 Sqfeet net area PENT HOUSE AVAILABLE FOR RENT",
+    title:
+      "Fully furnished and renovated Top floor 4000 Sqfeet net area PENT HOUSE AVAILABLE FOR RENT",
     address: "D.H.A. Phase 8 Defence Housing Authority, Karachi, Pakistan",
     price: "10 Lac",
     propertyType: "Featured Listings",
@@ -66,7 +67,8 @@ const Properties = [
   {
     _id: "aaag",
     title: "1236 Sq-Ft Office Available For Rent",
-    address: "D.H.A. Phase 2 Phase 2 Defence Housing Authority, Karachi, 75500, Pakistan",
+    address:
+      "D.H.A. Phase 2 Phase 2 Defence Housing Authority, Karachi, 75500, Pakistan",
     price: "90,000/-",
     propertyType: "Featured Listings",
     squareYard: "137 Sq. Yd.",
@@ -75,7 +77,8 @@ const Properties = [
   },
   {
     _id: "aaah",
-    title: "Out Class Brand New Building Available For Rent At A Very Prime Location Of DHA With Extraordinary Elevation And Multiple Car Parking",
+    title:
+      "Out Class Brand New Building Available For Rent At A Very Prime Location Of DHA With Extraordinary Elevation And Multiple Car Parking",
     address: "D.H.A. Phase 8 Defence Housing Authority, Karachi, Pakistan",
     price: "5 Lac",
     propertyType: "Featured Listings",
@@ -83,7 +86,7 @@ const Properties = [
     type: "Building",
     time: "3 months ago",
   },
-//   ********************************************
+  //   ********************************************
   {
     _id: "aaai",
     title: "Bungalow For Rent Fully Furnished 7 Bedroom With Attached",
@@ -129,7 +132,8 @@ const Properties = [
   },
   {
     _id: "aaam",
-    title: "1st floor Portion fully furnished in sindh baloch society blk 12 johar",
+    title:
+      "1st floor Portion fully furnished in sindh baloch society blk 12 johar",
     address: "W47Q+V64, Block 12 Sindh Baloch CHS Block 12 Karachi, Pakistan",
     price: "60,000/-",
     propertyType: "Most Viewed Properties",
@@ -139,7 +143,8 @@ const Properties = [
   },
   {
     _id: "aaan",
-    title: "Fully furnished and renovated Top floor 4000 Sqfeet net area PENT HOUSE AVAILABLE FOR RENT",
+    title:
+      "Fully furnished and renovated Top floor 4000 Sqfeet net area PENT HOUSE AVAILABLE FOR RENT",
     address: "D.H.A. Phase 8 Defence Housing Authority, Karachi, Pakistan",
     price: "10 Lac",
     propertyType: "Most Viewed Properties",
@@ -147,7 +152,7 @@ const Properties = [
     type: "PentHouse",
     time: "3 months ago",
   },
-//   **********************************
+  //   **********************************
   {
     _id: "aaao",
     title:
@@ -215,7 +220,8 @@ const Properties = [
   {
     _id: "aaau",
     title: "First PentHouse",
-    address: "D.H.A. Phase 8 Phase 8 Defence Housing Authority, Karachi, Pakistan",
+    address:
+      "D.H.A. Phase 8 Phase 8 Defence Housing Authority, Karachi, Pakistan",
     price: "30,000/-",
     propertyType: "Most Favourites Properties",
     squareYard: "120 Sq. Yd.",
@@ -224,7 +230,8 @@ const Properties = [
   },
   {
     _id: "aaav",
-    title: "Fully furnished and renovated Top floor 4000 Sqfeet net area PENT HOUSE AVAILABLE FOR RENT",
+    title:
+      "Fully furnished and renovated Top floor 4000 Sqfeet net area PENT HOUSE AVAILABLE FOR RENT",
     address: "D.H.A. Phase 8 Defence Housing Authority, Karachi, Pakistan",
     price: "10 Lac",
     propertyType: "Most Favourites Properties",
@@ -234,7 +241,8 @@ const Properties = [
   },
   {
     _id: "aaaw",
-    title: "A Stunning Prime Location Building Is Up For Grabs In Zulfiqar Commercial Area Karachi",
+    title:
+      "A Stunning Prime Location Building Is Up For Grabs In Zulfiqar Commercial Area Karachi",
     address: "D.H.A. Phase 8 Defence Housing Authority, Karachi, Pakistan",
     price: "18 Lac",
     propertyType: "Most Favourites Properties",
@@ -244,8 +252,10 @@ const Properties = [
   },
   {
     _id: "aaax",
-    title: "Shop For Rent 1500 Square Feet On Main Shujaat with basement and lofti",
-    address: "Shaheed-e-Millat Rd, Bahadurabad Bahadur Yar Jang CHS, Karachi, 75400, Pakistan",
+    title:
+      "Shop For Rent 1500 Square Feet On Main Shujaat with basement and lofti",
+    address:
+      "Shaheed-e-Millat Rd, Bahadurabad Bahadur Yar Jang CHS, Karachi, 75400, Pakistan",
     price: "15 Lac",
     propertyType: "Most Favourites Properties",
     squareYard: "200 Sq. Yd.",
@@ -255,7 +265,8 @@ const Properties = [
   {
     _id: "aaay",
     title: "1236 Sq-Ft Office Available For Rent",
-    address: "D.H.A. Phase 2 Phase 2 Defence Housing Authority, Karachi, 75500, Pakistan",
+    address:
+      "D.H.A. Phase 2 Phase 2 Defence Housing Authority, Karachi, 75500, Pakistan",
     price: "90,000/-",
     propertyType: "Most Favourites Properties",
     squareYard: "137 Sq. Yd.",
@@ -264,7 +275,8 @@ const Properties = [
   },
   {
     _id: "aaaz",
-    title: "1st floor Portion fully furnished in sindh baloch society blk 12 johar",
+    title:
+      "1st floor Portion fully furnished in sindh baloch society blk 12 johar",
     address: "W47Q+V64, Block 12 Sindh Baloch CHS Block 12 Karachi, Pakistan",
     price: "60,000/-",
     propertyType: "Most Favourites Properties",
