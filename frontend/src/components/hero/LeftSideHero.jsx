@@ -2,6 +2,7 @@ import React from "react";
 import { FaHouse, FaBuilding, FaIndustry } from "react-icons/fa6";
 import { FaSearch, FaFilter } from "react-icons/fa";
 import { RiArrowDropDownLine } from "react-icons/ri";
+import PropertyCardSponsored from "./PropertyCardSponsored";
 
 const LeftSideHero = () => {
   return (
@@ -54,7 +55,10 @@ const LeftSideHero = () => {
           </button>
         </div>
       </div>
-      
+      <div className="mt-12 flex flex-col gap-4">
+        <h1 className="text-2xl font-semibold">Sponsored Properties</h1>
+        <PropertyCardSponsored />
+      </div>
     </div>
   );
 };
