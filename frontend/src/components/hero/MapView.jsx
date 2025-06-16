@@ -5,11 +5,12 @@ const MapView = () => {
 
   return (
     <div className="w-full h-full">
-      <div className="h-[100vh] rounded-xl overflow-hidden shadow-lg z-0">
+      <div className="h-full rounded-xl overflow-hidden shadow-lg z-0">
         <MapContainer
           center={position}
           zoom={13}
           scrollWheelZoom={true}
+          zoomControl={false}
           className="h-full w-full"
         >
           <TileLayer

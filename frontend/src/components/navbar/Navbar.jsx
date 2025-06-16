@@ -12,7 +12,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   return (
     <>
-      <nav className="bg-orange-800 ">
+      <nav className="bg-orange-800 fixed top-0 left-0 w-full z-[999]">
         <div className="flex justify-between items-center max-w-[1500px] mx-auto px-6">
           <div className="">
             <img
@@ -83,7 +83,7 @@ const Navbar = () => {
                 <NavLink
                   to={links.path}
                   onClick={() => {
-                    setSideBar(false)
+                    // setSideBar(false)
                     setSideBarLinks(
                       sideBarLinks === links.title ? null : links.title
                     )
@@ -96,7 +96,7 @@ const Navbar = () => {
                 {links.subMenu && sideBarLinks === links.title && (
                   <div className="ml-4 mt-2 p-2 font-normal">
                     {links.subLinks.map((sublinks, ind) => (
-                      <li key={ind}>{sublinks.title}</li>
+                      <li key={ind} className="text-sm">{sublinks.title}</li>
                     ))}
                   </div>
                 )}

@@ -4,11 +4,11 @@ import LeftSideHero from "./LeftSideHero";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col-reverse md:flex-col lg:flex-row items-start gap-2 max-w-[1450px] mx-auto my-0 md:my-10">
-      <div>
+    <div className="pt-20 flex flex-col-reverse md:flex-col lg:flex-row items-stretch  gap-2 max-w-[1450px] mx-auto my-0 md:my-10">
+      <div >
         <LeftSideHero />
       </div>
-      <div className="w-full block md:hidden lg:block ">
+      <div className="w-full block md:block lg:block">
         <MapView />
       </div>
     </div>
