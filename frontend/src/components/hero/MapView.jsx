@@ -4,7 +4,7 @@ const MapView = () => {
   const position = [24.8607, 67.0011]; // Example: Karachi
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-[400px] sm:h-[500px] lg:h-full">
       <div className="h-full rounded-xl overflow-hidden shadow-lg z-0">
         <MapContainer
           center={position}
