@@ -6,20 +6,20 @@ import PropertyCardSponsored from "./PropertyCardSponsored";
 
 const LeftSideHero = () => {
   return (
-    <div className="mx-4">
-      <h1 className="text-4xl font-semibold font-serif my-10">
+    <div className="mx-4 mt-6 md:mt-0">
+      <h1 className="hidden sm:block text-4xl font-semibold font-serif">
         We Connect <span className="text-orange-800">Owners</span> &{" "}
         <span className="text-orange-800">Tenants</span> for Hassle-Free Rental
         Properties
       </h1>
-      <div className="flex gap-4">
-        <p className="flex items-center gap-2 cursor-pointer">
+      <div className="flex gap-4 mt-4">
+        <p className="flex items-center gap-2 cursor-pointer text-sm md:text-lg">
           <FaHouse /> Residential
         </p>
-        <p className="flex items-center gap-2 cursor-pointer">
+        <p className="flex items-center gap-2 cursor-pointer text-sm md:text-lg">
           <FaBuilding /> Commercial
         </p>
-        <p className="flex items-center gap-2 cursor-pointer">
+        <p className="flex items-center gap-2 cursor-pointer text-sm md:text-lg">
           <FaIndustry /> Industrial
         </p>
       </div>
@@ -33,19 +33,22 @@ const LeftSideHero = () => {
         />
       </div>
       <hr className="my-4 text-gray-400" />
-      <div className="flex justify-evenly ">
-        <input
-          type="text"
-          placeholder="Search an area"
-          className="outline-none"
-        />
-        <p className="border-r-2 border-gray-400"></p>
-        <div>
-          <p className="text-gray-400 text-sm">Property Type</p>
-          <p className="flex items-center text-gray-800 cursor-pointer">
-            All Types <RiArrowDropDownLine />
-          </p>
+      <div className="flex flex-col sm:flex-row justify-evenly ">
+        <div className="flex gap-2">
+          <input
+            type="text"
+            placeholder="Search an area"
+            className="outline-none" 
+          />
+          <p className="border-r-2 border-gray-400"></p>
+          <div>
+            <p className="text-gray-400 text-sm">Property Type</p>
+            <p className="flex items-center text-gray-800 cursor-pointer">
+              All Types <RiArrowDropDownLine />
+            </p>
+          </div>
         </div>
+        <hr className="block sm:hidden my-4 text-gray-400" />
         <div className="flex gap-2">
           <button className="flex items-center gap-2 border border-orange-800 text-orange-800 rounded-xl py-1 px-4 cursor-pointer">
             <FaFilter /> Filter

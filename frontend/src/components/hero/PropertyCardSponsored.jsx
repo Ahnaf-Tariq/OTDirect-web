@@ -15,10 +15,10 @@ const PropertyCardSponsored = () => {
       ).map((item, index) => (
         <div
           key={index}
-          className="w-[320px] h-[350px] bg-white rounded-2xl shadow-lg overflow-hidden"
+          className="w-[320px] h-[350px] bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer"
         >
           <img
-            className="w-[320px] h-[156px]"
+            className="w-[320px] h-[156px] hover:opacity-70"
             src="https://otdirect-admin.getweys.tech/images//property_title_img/1742130790.2105.jpg"
             alt=""
           />
