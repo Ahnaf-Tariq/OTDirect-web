@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import Properties from "../../assets/assets";
 import { MdKeyboardArrowRight, MdOutlineBathroom, MdOutlineBedroomParent } from "react-icons/md";
 import { TfiRuler } from "react-icons/tfi";
@@ -24,13 +24,13 @@ const PropertyCardFeatured = () => {
       {/* Arrows */}
       <button
         onClick={scrollLeft}
-        className="absolute left-0 top-1/2 bg-white shadow-lg p-2 rounded-full text-xl"
+        className="absolute left-0 top-1/2 bg-white shadow-lg p-2 rounded-full text-xl cursor-pointer"
       >
         <MdKeyboardArrowLeft />
       </button>
       <button
         onClick={scrollRight}
-        className="absolute right-0 top-1/2 bg-white shadow-lg p-2 rounded-full text-xl"
+        className="absolute right-0 top-1/2 bg-white shadow-lg p-2 rounded-full text-xl cursor-pointer"
       >
         <MdKeyboardArrowRight />
       </button>
@@ -38,7 +38,7 @@ const PropertyCardFeatured = () => {
       {/* Scroll Cards */}
       <div
         ref={scrollRef}
-        className="flex overflow-x-auto gap-4 py-4 scrollbar-hide scroll-smooth"
+        className="flex overflow-x-hidden gap-4 py-4 scroll-smooth"
       >
         {Properties.filter(
           (item) => item.propertyType === "Featured Listings"
