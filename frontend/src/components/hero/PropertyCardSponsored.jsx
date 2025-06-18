@@ -9,7 +9,7 @@ import { IoIosCall } from "react-icons/io";
 
 const PropertyCardSponsored = () => {
   return (
-    <div>
+    <div className="flex overflow-x-auto gap-4 py-4 scrollbar-hide scroll-smooth">
       {Properties.filter(
         (item) => item.propertyType === "Sponsored Properties"
       ).map((item, index) => (
@@ -18,7 +18,7 @@ const PropertyCardSponsored = () => {
           className="w-[320px] h-[350px] bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer"
         >
           <img
-            className="w-[320px] h-[156px] hover:opacity-70"
+            className="w-full h-[156px] hover:opacity-70"
             src={item.image}
             alt=""
           />
