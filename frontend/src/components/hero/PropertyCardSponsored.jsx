@@ -19,7 +19,7 @@ const PropertyCardSponsored = () => {
         >
           <img
             className="w-[320px] h-[156px] hover:opacity-70"
-            src="https://otdirect-admin.getweys.tech/images//property_title_img/1742130790.2105.jpg"
+            src={item.image}
             alt=""
           />
           <div className="flex flex-col gap-3 p-2">
