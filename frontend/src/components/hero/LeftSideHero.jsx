@@ -59,7 +59,7 @@ const LeftSideHero = () => {
         </div>
       </div>
       <div className="mt-12 flex flex-col gap-4">
-        <h1 className="text-2xl font-semibold">Sponsored Properties</h1>
+        <h1 className="text-lg sm:text-xl md:text-2xl font-semibold">Sponsored Properties</h1>
         <PropertyCardSponsored />
       </div>
     </div>

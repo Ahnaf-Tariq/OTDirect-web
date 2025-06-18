@@ -255,7 +255,7 @@ const Properties = [
       "Fully furnished and renovated Top floor 4000 Sqfeet net area PENT HOUSE AVAILABLE FOR RENT",
     address: "D.H.A. Phase 8 Defence Housing Authority, Karachi, Pakistan",
     price: "10 Lac",
-    image: "https://otdirect-admin.getweys.tech/images//property_title_img/1741252201.2999.jpg",
+    image: "https://otdirect-admin.getweys.tech/images//property_title_img/1741868807.5401.jpg",
     propertyType: "Most Favourites Properties",
     squareYard: "444 Sq. Yd.",
     type: "PentHouse",
