@@ -1,5 +1,6 @@
 import React from "react";
 import { IoMdMail } from "react-icons/io";
+"&quot;/_next/static/media/Breadcrumbs.1ae0e8e1.jpg&quot"
 
 const Footer = () => {
   return (
