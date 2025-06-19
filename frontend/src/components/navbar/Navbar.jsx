@@ -6,13 +6,13 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { NavLink, useNavigate } from "react-router-dom";
 import navLinks from "./navlinks";
 
-const Navbar = () => {
+const Navbar = ({ setShowLogin }) => {
   const [sideBar, setSideBar] = useState(false);
   const [sideBarLinks, setSideBarLinks] = useState(null);
   const navigate = useNavigate();
   return (
     <>
-      <nav className="bg-orange-800 fixed top-0 left-0 w-full z-[999]">
+      <nav className="bg-[#7A1233] fixed top-0 left-0 w-full z-[999]">
         <div className="flex justify-between items-center max-w-[1500px] mx-auto px-6">
           <div className="">
             <img
@@ -35,7 +35,7 @@ const Navbar = () => {
                       {links.subLinks.map((sublink, ind) => (
                         <li
                           key={ind}
-                          className="p-[6px] hover:text-orange-800 text-base"
+                          className="p-[6px] hover:text-[#7A1233] text-base"
                         >
                           {sublink.title}
                         </li>
@@ -45,10 +45,10 @@ const Navbar = () => {
                 </div>
               ))}
             </ul>
-            <button className="rounded p-2 font-semibold text-orange-800 bg-white cursor-pointer">
+            <button className="rounded p-2 font-semibold text-[#7A1233] bg-white cursor-pointer">
               <span className="text-xl">+</span> Add Property
             </button>
-            <button className="rounded p-2 text-2xl font-semibold text-orange-800 bg-white cursor-pointer">
+            <button onClick={()=>setShowLogin(true)} className="rounded p-2 text-2xl font-semibold text-[#7A1233] bg-white cursor-pointer">
               <CgProfile />
             </button>
           </div>
@@ -64,7 +64,7 @@ const Navbar = () => {
       {/* ********************** Sidebar *************************** */}
       {sideBar && (
         <div
-          className={`fixed top-0 left-0 z-[999] h-full w-60 sm:w-96 bg-orange-800 text-white `}
+          className={`fixed top-0 left-0 z-[999] h-full w-60 sm:w-96 bg-[#7A1233] text-white `}
         >
           <div className="flex justify-between items-center px-6 py-4 border-b border-orange-300">
             <img
@@ -104,10 +104,10 @@ const Navbar = () => {
             ))}
           </ul>
           <div className="px-6 flex gap-2">
-            <button className="rounded h-10 px-2 font-semibold text-orange-800 bg-white cursor-pointer">
+            <button className="rounded h-10 px-2 font-semibold text-[#7A1233] bg-white cursor-pointer">
               <span className="text-xl">+</span> Add Property
             </button>
-            <button className="rounded h-10 px-2 text-2xl font-semibold text-orange-800 bg-white cursor-pointer">
+            <button className="rounded h-10 px-2 text-2xl font-semibold text-[#7A1233] bg-white cursor-pointer">
               <CgProfile />
             </button>
           </div>

@@ -74,18 +74,18 @@ const PropertyCardFavourite = () => {
                 <h2 className="text-base line-clamp-1 max-w-40">
                   {item.address}
                 </h2>
-                <p className="text-base text-orange-800 flex items-center gap-1 font-semibold">
+                <p className="text-base text-[#7A1233] flex items-center gap-1 font-semibold">
                   <BsBuildings /> {item.type}
                 </p>
               </div>
               <div className="flex justify-between mx-1">
-                <button className="flex items-center gap-1 cursor-pointer font-mono border bg-orange-800 text-white rounded-xl p-2">
+                <button className="flex items-center gap-1 cursor-pointer font-mono border bg-[#7A1233] text-white rounded-xl p-2">
                   <BiMessageRoundedDetail /> Message
                 </button>
-                <button className="flex items-center gap-1 cursor-pointer font-mono border bg-white text-orange-800 rounded-xl p-2">
+                <button className="flex items-center gap-1 cursor-pointer font-mono border bg-white text-[#7A1233] rounded-xl p-2">
                   <FaWhatsapp /> Whatsapp
                 </button>
-                <button className="flex items-center gap-1 cursor-pointer border bg-white text-orange-800 rounded-xl p-2">
+                <button className="flex items-center gap-1 cursor-pointer border bg-white text-[#7A1233] rounded-xl p-2">
                   <IoIosCall /> Call
                 </button>
               </div>
