@@ -4,7 +4,7 @@ import { IoMdMail } from "react-icons/io";
 const Footer = () => {
   return (
     <div className="mt-10 bg-orange-800">
-      <div className="max-w-[1450px] mx-auto py-10 flex justify-between border-b-2 border-b-gray-100">
+      <div className="max-w-[1450px] mx-auto px-2 py-10 flex flex-col md:flex-row justify-between items-start gap-10 md:gap-4 border-b-2 border-b-gray-100">
         <div className="flex flex-col items-center gap-6">
           <img
             onClick={() => navigate("/")}
