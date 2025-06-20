@@ -15,7 +15,16 @@ const App = () => {
   return (
     <>
       {showLogin ? <Login setShowLogin={setShowLogin} /> : <></>}
-      <div className={showLogin ? "overflow-hidden h-screen" : ""}>
+      <div
+        style={{
+          backgroundImage:
+            "url('/_next/static/media/Breadcrumbs.1ae0e8e1.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          height: "400px", // or whatever height you want
+        }}
+        className={showLogin ? "overflow-hidden h-screen" : ""}
+      >
         <Navbar setShowLogin={setShowLogin} />
         <Routes>
           <Route path="/" element={<Home />} />

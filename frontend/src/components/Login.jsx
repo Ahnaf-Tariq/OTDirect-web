@@ -69,12 +69,14 @@ const Login = ({ setShowLogin }) => {
           <FaGoogle />
         </button>
         {currentState === "Sign In" ? (
-          <p>
-            or dont have an account <span>Sign Up</span>
+          <p className="mt-4 text-lg" onClick={()=>setCurrentState('Sign Up')}>
+            or dont have an account{" "}
+            <span className="text-[#7A1233] font-semibold cursor-pointer">Sign Up</span>
           </p>
         ) : (
-          <p>
-            back to <span>Sign In</span>
+          <p className="mt-4 text-lg" onClick={()=>setCurrentState('Sign In')}>
+            back to{" "}
+            <span className="text-[#7A1233] font-semibold cursor-pointer">Sign In</span>
           </p>
         )}
       </div>
