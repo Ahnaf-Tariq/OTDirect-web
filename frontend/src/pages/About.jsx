@@ -5,12 +5,14 @@ const About = () => {
   return (
     <>
       <TitleImage title={'ABOUT'}/>
-      <div>
-        <div>
-          <h1 className=" text-center text-4xl pt-32 font-bold">CONTACT</h1>
-          <h1 className="text-center text-4xl pt-32 font-bold">CONTACT</h1>
-          <h1 className="text-center text-4xl pt-32 font-bold">CONTACT</h1>
-          <h1 className="text-center text-4xl pt-32 font-bold">CONTACT</h1>
+      <div className='max-w-[1450px] mx-auto flex justify-between gap-3'>
+        <div className='w-1/2'>
+          <h1 className='text-xl font-semibold'>font</h1>
+          <input type="text" className='w-full' placeholder='enter' />
+        </div>
+        <div className='w-1/2'>
+          <h1 className='text-xl font-semibold'>font</h1>
+          <input type="text" className='w-full' placeholder='enter' />
         </div>
       </div>
     </>

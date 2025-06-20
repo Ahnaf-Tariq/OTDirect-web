@@ -5,13 +5,13 @@ const TitleImage = ({ title }) => {
     <>
       <div
         style={{
-          backgroundImage: "url('/mainImage.jpg')",
+          backgroundImage: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/mainImage.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "400px",
+          height: "380px",
         }}
       >
-        <h1 className="text-white text-center pt-44 text-4xl font-bold ">
+        <h1 className="text-white text-center pt-48 text-3xl font-bold ">
           {title}
         </h1>
       </div>
