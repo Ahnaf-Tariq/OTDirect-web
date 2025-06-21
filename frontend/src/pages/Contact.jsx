@@ -60,12 +60,16 @@ const Contact = () => {
                 placeholder="Enter message"
               ></textarea>
             </div>
-            <button className="bg-[#7A1233] text-white">Submit</button>
+            <div className="flex justify-end">
+              <button className="w-40 bg-[#7A1233] text-white rounded-md py-2 cursor-pointer font-semibold">
+                Submit
+              </button>
+            </div>
           </form>
         </div>
-        <div className="w-md bg-[#7A1233] text-white p-6">
+        <div className="w-lg bg-[#7A1233] text-white p-6">
           <div className="flex flex-col gap-4">
-            <h1>Contact Info</h1>
+            <h1 className="font-semibold text-2xl">Contact Info</h1>
             <p className="flex items-center gap-2">
               <MdLocationOn />
               Office Address
