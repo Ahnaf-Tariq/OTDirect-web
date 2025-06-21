@@ -67,23 +67,23 @@ const Contact = () => {
             </div>
           </form>
         </div>
-        <div className="w-lg bg-[#7A1233] text-white p-6">
-          <div className="flex flex-col gap-4">
-            <h1 className="font-semibold text-2xl">Contact Info</h1>
-            <p className="flex items-center gap-2">
-              <MdLocationOn />
+        <div className="w-lg bg-[#7A1233] text-white rounded-r-2xl">
+          <div className="flex flex-col gap-12 p-6 pt-18">
+            <h1 className="font-bold text-2xl">Contact Info</h1>
+            <p className="flex items-center gap-4 font-semibold text-xl">
+              <span className="border rounded-full p-2 text-[#7A1233] bg-white"><MdLocationOn /></span>
               Office Address
             </p>
-            <p className="flex items-center gap-2">
-              <BsFillTelephoneFill />
+            <p className="flex items-center gap-4 font-semibold text-xl">
+              <span className="border rounded-full p-2 text-[#7A1233] bg-white"><BsFillTelephoneFill /></span>
               Telephone
             </p>
-            <div className="flex items-center gap-2">
-              <p>
+            <div className="flex items-center gap-4">
+              <p className="border rounded-full p-2 text-[#7A1233] bg-white">
                 <IoMdMail />
               </p>
-              <div>
-                <p>Email Us</p>
+              <div className="space-y-1">
+                <p className="font-semibold text-xl">Email Us</p>
                 <p>otdirect@getweys.com</p>
               </div>
             </div>
