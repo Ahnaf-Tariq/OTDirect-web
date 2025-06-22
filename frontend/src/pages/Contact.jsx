@@ -56,6 +56,7 @@ const Contact = () => {
             <div className="space-y-2 ">
               <p className="font-semibold">Message</p>
               <textarea
+                rows={9}
                 className="w-full border rounded-md px-3 py-2"
                 placeholder="Enter message"
               ></textarea>
@@ -71,11 +72,15 @@ const Contact = () => {
           <div className="flex flex-col items-center md:items-start gap-12 p-6 py-10 md:pt-18">
             <h1 className="font-bold text-3xl">Contact Info</h1>
             <p className="flex flex-col md:flex-row items-center gap-2 md:gap-4 font-semibold text-xl">
-              <span className="border rounded-full p-2 text-[#7A1233] bg-white"><MdLocationOn /></span>
+              <span className="border rounded-full p-2 text-[#7A1233] bg-white">
+                <MdLocationOn />
+              </span>
               Office Address
             </p>
             <p className="flex flex-col md:flex-row items-center gap-2 md:gap-4 font-semibold text-xl">
-              <span className="border rounded-full p-2 text-[#7A1233] bg-white"><BsFillTelephoneFill /></span>
+              <span className="border rounded-full p-2 text-[#7A1233] bg-white">
+                <BsFillTelephoneFill />
+              </span>
               Telephone
             </p>
             <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
