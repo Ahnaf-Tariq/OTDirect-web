@@ -3,7 +3,7 @@ import { CgProfile } from "react-icons/cg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import navLinks from "./navlinks";
 
 const Navbar = ({ setShowLogin }) => {
@@ -33,12 +33,13 @@ const Navbar = ({ setShowLogin }) => {
                   {links.subMenu && (
                     <div className="absolute z-[999] hidden group-hover:block border rounded-md shadow-lg w-52 bg-white text-gray-500 left-[-20px] p-2 ">
                       {links.subLinks.map((sublink, ind) => (
-                        <li
+                        <Link
                           key={ind}
-                          className="p-[6px] hover:text-[#7A1233] text-base"
+                          to={sublink.path}
+                          className="block w-full p-[6px] hover:text-[#7A1233] text-base"
                         >
                           {sublink.title}
-                        </li>
+                        </Link>
                       ))}
                     </div>
                   )}

@@ -4,11 +4,11 @@ const navLinks = [
     title: "Properties",
     subMenu: true,
     subLinks: [
-      { title: "All Properties" },
-      { title: "Featured Properties" },
-      { title: "Most Viewed Properties" },
-      { title: "Nearby Cities Properties" },
-      { title: "Most Favorite Properties" },
+      { title: "All Properties", path: "/properties/all-properties" },
+      { title: "Featured Properties", path: "/featured-properties" },
+      { title: "Most Viewed Properties", path: "/most-viewed-properties" },
+      { title: "Nearby Cities Properties", path: "/properties-nearby-city" },
+      { title: "Most Favorite Properties", path: "/most-favorite-properties" },
     ],
   },
   {
