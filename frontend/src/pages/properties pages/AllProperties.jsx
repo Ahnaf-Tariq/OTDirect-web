@@ -7,21 +7,21 @@ import Properties24 from "../../components/24 properties/24Properties";
 
 const AllProperties = () => {
   return (
-    <div className="px-4 py-10">
+    <div className="px-2 py-10">
       <div className="pt-20 mb-14 flex justify-center">
-        <div className="flex flex-col items-start">
+        <div className="flex flex-col items-start ml-6">
           <div className="flex gap-4 mt-4">
-            <p className="flex items-center gap-2 cursor-pointer text-sm md:text-lg">
+            <p className="flex items-center gap-2 cursor-pointer text-base md:text-lg">
               <FaHouse /> Residential
             </p>
-            <p className="flex items-center gap-2 cursor-pointer text-sm md:text-lg">
+            <p className="flex items-center gap-2 cursor-pointer text-base md:text-lg">
               <FaBuilding /> Commercial
             </p>
-            <p className="flex items-center gap-2 cursor-pointer text-sm md:text-lg">
+            <p className="flex items-center gap-2 cursor-pointer text-base md:text-lg">
               <FaIndustry /> Industrial
             </p>
           </div>
-          <hr className="my-4 border-t border-gray-300 w-xl" />
+          <hr className="my-4 border-t border-gray-300 w-80 sm:w-lg md:w-xl" />
           <div className="flex items-center gap-3">
             <FaSearch className="text-[#7A1233]" />
             <input
@@ -30,7 +30,7 @@ const AllProperties = () => {
               className="outline-none text-xl w-96"
             />
           </div>
-          <hr className="my-4 border-t border-gray-300 w-xl" />
+          <hr className="my-4 border-t border-gray-300 w-80 sm:w-lg md:w-xl" />
           <div className="flex flex-col sm:flex-row justify-evenly gap-4">
             <div className="flex items-center gap-4">
               <input
