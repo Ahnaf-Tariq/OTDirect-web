@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
+import TitleImage from "../../components/TitleImage";
+import Properties24 from "../../components/24 properties/24Properties";
 
 const FeaturedProperties = () => {
   return (
     <div>
-        <h1 className='bg-white py-20 text-black text-2xl font-semibold text-center'>FeaturedPROPERTIES</h1>
+      <TitleImage title={"Featured All Properties"} />
+      <div>
+        <Properties24 />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default FeaturedProperties
+export default FeaturedProperties;
