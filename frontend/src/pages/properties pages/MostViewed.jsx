@@ -1,11 +1,16 @@
 import React from "react";
+import TitleImage from "../../components/TitleImage";
+import Properties24 from "../../components/24 properties/24Properties";
 
 const MostViewed = () => {
   return (
     <div>
-      <h1 className="bg-white py-20 text-black text-2xl font-semibold text-center">
-        Most Viewed Properties
-      </h1>
+      <div>
+      <TitleImage title={"Most Viewed Properties"} />
+      <div>
+        <Properties24 />
+      </div>
+    </div>
     </div>
   );
 };
