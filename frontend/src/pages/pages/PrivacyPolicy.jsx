@@ -1,10 +1,14 @@
 import React from 'react'
+import TitleImage from '../../components/TitleImage'
 
 const PrivacyPolicy = () => {
   return (
-    <div>
-        
-    </div>
+    <>
+      <TitleImage title={"Privacy Policy"} />
+      <div className="p-24">
+
+      </div>
+    </>
   )
 }
 

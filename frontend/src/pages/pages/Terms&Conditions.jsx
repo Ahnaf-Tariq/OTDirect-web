@@ -1,8 +1,14 @@
 import React from 'react'
+import TitleImage from '../../components/TitleImage'
 
 const TermsConditions = () => {
   return (
-    <div></div>
+    <>
+      <TitleImage title={"Terms & Condition"} />
+      <div className="p-24">
+
+      </div>
+    </>
   )
 }
 

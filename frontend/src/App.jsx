@@ -13,6 +13,10 @@ import FeaturedProperties from "./pages/properties pages/FeaturedProperties";
 import MostViewed from "./pages/properties pages/MostViewed";
 import NearbyCities from "./pages/properties pages/NearbyCities";
 import MostFavourite from "./pages/properties pages/MostFavourite";
+import SubscriptionPlan from "./pages/pages/SubscriptionPlan";
+import Trends from "./pages/pages/Trends";
+import TermsConditions from "./pages/pages/Terms&Conditions";
+import PrivacyPolicy from "./pages/pages/PrivacyPolicy";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -31,6 +35,10 @@ const App = () => {
           <Route path="/most-viewed-properties" element={<MostViewed />}/>
           <Route path="/properties-nearby-city" element={<NearbyCities />}/>
           <Route path="/most-favorite-properties" element={<MostFavourite />}/>
+          <Route path="/subscription-plan" element={<SubscriptionPlan />}/>
+          <Route path="/trends" element={<Trends />}/>
+          <Route path="/terms-and-condition" element={<TermsConditions />}/>
+          <Route path="/privacy-policy" element={<PrivacyPolicy />}/>
         </Routes>
         <Footer />
       </div>
