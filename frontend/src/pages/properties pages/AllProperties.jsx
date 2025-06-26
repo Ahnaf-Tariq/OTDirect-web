@@ -8,37 +8,37 @@ import Properties24 from "../../components/24 properties/24Properties";
 const AllProperties = () => {
   return (
     <div className="px-2 py-10">
-      <div className="pt-20 mb-14 flex justify-center">
-        <div className="flex flex-col items-start ml-6">
+      <div className="pt-20 mb-14 flex justify-center overflow-x-hidden">
+        <div className="w-full max-w-screen-sm">
           <div className="flex gap-4 mt-4">
-            <p className="flex items-center gap-2 cursor-pointer text-base md:text-lg">
+            <p className="flex items-center gap-[2px] sm:gap-2 cursor-pointer text-base md:text-lg">
               <FaHouse /> Residential
             </p>
-            <p className="flex items-center gap-2 cursor-pointer text-base md:text-lg">
+            <p className="flex items-center gap-[2px] sm:gap-2 cursor-pointer text-base md:text-lg">
               <FaBuilding /> Commercial
             </p>
-            <p className="flex items-center gap-2 cursor-pointer text-base md:text-lg">
+            <p className="flex items-center gap-[2px] sm:gap-2 cursor-pointer text-base md:text-lg">
               <FaIndustry /> Industrial
             </p>
           </div>
-          <hr className="my-4 border-t border-gray-300 w-80 sm:w-lg md:w-xl" />
+          <hr className="my-4 border-t border-gray-300 w-full max-w-[600px]" />
           <div className="flex items-center gap-3">
             <FaSearch className="text-[#7A1233]" />
             <input
               type="text"
               placeholder="Search..."
-              className="outline-none text-xl w-96"
+              className="outline-none text-xl w-full max-w-[350px]"
             />
           </div>
-          <hr className="my-4 border-t border-gray-300 w-80 sm:w-lg md:w-xl" />
-          <div className="flex flex-col sm:flex-row justify-evenly gap-4">
+          <hr className="my-4 border-t border-gray-300 w-full max-w-[600px]" />
+          <div className="flex flex-col sm:flex-row flex-wrap justify-evenly gap-4">
             <div className="flex items-center gap-4">
               <input
                 type="text"
                 placeholder="Search an area"
                 className="outline-none"
               />
-              <p className="h-6 border-r-2 border-gray-400"></p>
+              <p className="h-6 border-r-2 border-gray-400 "></p>
               <div>
                 <p className="text-gray-400 text-sm flex items-center gap-2">
                   Property Type <RiArrowDropDownLine />
