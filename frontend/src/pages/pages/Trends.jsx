@@ -11,7 +11,7 @@ const Trends = () => {
           onClick={() => setColorFilter("Residential")}
           className={`${
             colorFilter === "Residential"
-              ? "text-[#7A1233] border-b-3 border-[#7A1233] pb-1"
+              ? "text-[#7A1233] border-b-3 border-[#7A1233] pb-2"
               : ""
           } flex items-center gap-[2px] sm:gap-2 cursor-pointer text-base md:text-lg`}
         >
@@ -21,7 +21,7 @@ const Trends = () => {
           onClick={() => setColorFilter("Commercial")}
           className={`${
             colorFilter === "Commercial"
-              ? "text-[#7A1233] border-b-3 border-[#7A1233] pb-1"
+              ? "text-[#7A1233] border-b-3 border-[#7A1233] pb-2"
               : ""
           } flex items-center gap-[2px] sm:gap-2 cursor-pointer text-base md:text-lg`}
         >
@@ -31,7 +31,7 @@ const Trends = () => {
           onClick={() => setColorFilter("Industrial")}
           className={`${
             colorFilter === "Industrial"
-              ? "text-[#7A1233] border-b-3 border-[#7A1233] pb-1"
+              ? "text-[#7A1233] border-b-3 border-[#7A1233] pb-2"
               : ""
           } flex items-center gap-[2px] sm:gap-2 cursor-pointer text-base md:text-lg`}
         >
