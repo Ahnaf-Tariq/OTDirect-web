@@ -1,11 +1,10 @@
 import React from "react";
+import TitleImage from "../../components/TitleImage";
 
 const NearbyCities = () => {
   return (
     <div>
-      <h1 className="bg-white py-20 text-black text-2xl font-semibold text-center">
-        Nearby cities Properties
-      </h1>
+      <TitleImage title={'Properties Nearby Cities'}/>
     </div>
   );
 };
