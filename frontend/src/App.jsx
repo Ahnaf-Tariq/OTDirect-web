@@ -11,12 +11,15 @@ import Login from "./components/Login";
 import AllProperties from "./pages/properties pages/AllProperties";
 import FeaturedProperties from "./pages/properties pages/FeaturedProperties";
 import MostViewed from "./pages/properties pages/MostViewed";
-import NearbyCities from "./pages/properties pages/NearbyCities";
+import NearbyCities from "./pages/properties pages/Cities/NearbyCities";
 import MostFavourite from "./pages/properties pages/MostFavourite";
 import SubscriptionPlan from "./pages/pages/SubscriptionPlan";
 import Trends from "./pages/pages/Trends";
 import TermsConditions from "./pages/pages/Terms&Conditions";
 import PrivacyPolicy from "./pages/pages/PrivacyPolicy";
+import Karachi from "./pages/properties pages/Cities/Karachi";
+import Sofia from "./pages/properties pages/Cities/Sofia";
+import Salcia from "./pages/properties pages/Cities/Salcia";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -39,6 +42,9 @@ const App = () => {
           <Route path="/trends" element={<Trends />}/>
           <Route path="/terms-and-condition" element={<TermsConditions />}/>
           <Route path="/privacy-policy" element={<PrivacyPolicy />}/>
+          <Route path="/properties/city/Karachi" element={<Karachi />}/>
+          <Route path="/properties/city/Sofia" element={<Sofia />}/>
+          <Route path="/properties/city/Salcia" element={<Salcia />}/>
         </Routes>
         <Footer />
       </div>
