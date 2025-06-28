@@ -430,7 +430,7 @@ const Properties = [
     address: "Johar Mor Bridge, Block 10 A Gulshan-e-Iqbal, Karachi, Pakistan",
     price: "3,233/-",
     image:
-      "https://otdirect-admin.getweys.tech/images//property_title_img/1742910319.2191.png",
+      "https://otdirect-admin.getweys.tech/images//property_title_img/1742305183.5787.png",
     propertyType: "24 Properties found",
     squareYard: "432 Sq. Yd.",
     type: "Villa",
