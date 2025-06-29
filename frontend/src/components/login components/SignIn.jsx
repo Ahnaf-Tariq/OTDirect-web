@@ -39,13 +39,13 @@ const SignIn = ({ currentState, emailNum, setEmailNum }) => {
             </p>
             {emailNum === "email" ? (
               <input
-                className="w-full bg-gray-100 py-2 px-1 focus:outline-none"
+                className="w-full bg-gray-100 p-2 rounded-md focus:outline-none"
                 type="email"
                 placeholder="Enter your email"
               />
             ) : (
               <input
-                className="w-full bg-gray-100 py-2 px-1 focus:outline-none"
+                className="w-full bg-gray-100 p-2 rounded-md focus:outline-none"
                 type="number"
                 placeholder="+92"
               />
@@ -54,7 +54,7 @@ const SignIn = ({ currentState, emailNum, setEmailNum }) => {
           <div>
             <p className="font-semibold">Password</p>
             <input
-              className="w-full bg-gray-100 py-2 px-1 focus:outline-none"
+              className="w-full bg-gray-100 p-2 rounded-md focus:outline-none"
               type="password"
               placeholder="Enter your password"
             />

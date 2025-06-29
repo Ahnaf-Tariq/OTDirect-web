@@ -6,13 +6,13 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import navLinks from "./navlinks";
 
-const Navbar = ({ setShowLogin, setShowAreaConverter }) => {
+const Navbar = ({ setShowLogin, setShowAreaConverter, showLogin, showAreaConverter }) => {
   const [sideBar, setSideBar] = useState(false);
   const [sideBarLinks, setSideBarLinks] = useState(null);
   const navigate = useNavigate();
   return (
     <>
-      <nav className="bg-[#7A1233] fixed top-0 left-0 w-full z-[999]">
+      <nav className={`bg-[#7A1233] fixed top-0 left-0 w-full ${showLogin || showAreaConverter ? 'z-50' : 'z-[999]'}`}>
         <div className="flex justify-between items-center gap-2 max-w-[1500px] mx-auto px-6">
           <div className="">
             <img

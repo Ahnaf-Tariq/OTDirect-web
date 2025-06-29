@@ -21,7 +21,7 @@ import Karachi from "./pages/properties pages/Cities/Karachi";
 import Sofia from "./pages/properties pages/Cities/Sofia";
 import Salcia from "./pages/properties pages/Cities/Salcia";
 import AreaConverter from "./components/AreaConverter";
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -41,14 +41,19 @@ const App = () => {
       >
         <ToastContainer />
         <Navbar
+          showLogin={showLogin}
           setShowLogin={setShowLogin}
+          showAreaConverter={showAreaConverter}
           setShowAreaConverter={setShowAreaConverter}
         />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact-us" element={<Contact />} />
           <Route path="/about-us" element={<About />} />
-          <Route path="/properties/all-properties" element={<AllProperties />} />
+          <Route
+            path="/properties/all-properties"
+            element={<AllProperties />}
+          />
           <Route path="/featured-properties" element={<FeaturedProperties />} />
           <Route path="/most-viewed-properties" element={<MostViewed />} />
           <Route path="/properties-nearby-city" element={<NearbyCities />} />

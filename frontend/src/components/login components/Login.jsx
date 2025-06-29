@@ -6,7 +6,7 @@ import SignUp from "./SignUp";
 const Login = ({ setShowLogin }) => {
   const [currentState, setCurrentState] = useState("Sign In");
   const [emailNum, setEmailNum] = useState("email");
-  const [SignUpOption, setSignUpOption] = useState("");
+  const [signUpOption, setSignUpOption] = useState("");
 
   return (
     <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-[999]">
@@ -29,10 +29,10 @@ const Login = ({ setShowLogin }) => {
             X
           </button>
         </div>
-        <hr className="my-6 text-gray-400" />
+        <hr className="my-4 text-gray-400" />
 
         {/* Sign Up display div */}
-        <SignUp currentState={currentState} />
+        <SignUp currentState={currentState} signUpOption={signUpOption} />
 
         {/* Sign Up Options display div */}
         <SignUpOptions
