@@ -24,7 +24,7 @@ const FilterCardCity = () => {
     console.log("Applying filter:", filterData);
   };
   return (
-    <div className="w-full space-y-5">
+    <div className="space-y-5">
       {/* Header */}
       <div className="flex justify-between items-center">
         <h2 className="font-semibold text-lg">Filter Properties</h2>

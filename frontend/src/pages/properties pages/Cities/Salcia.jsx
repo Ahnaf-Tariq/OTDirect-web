@@ -1,6 +1,6 @@
 import React from "react";
 import TitleImage from "../../../components/TitleImage";
-import FilterCardCity from "../../../components/FilterCardCity";
+import FilterCardCity from "../../../components/cards city/FilterCardCity";
 
 const Salcia = () => {
   return (
