@@ -11,7 +11,7 @@ const TitleImage = ({ title }) => {
           height: "380px",
         }}
       >
-        <h1 className="text-white text-center pt-48 text-3xl font-bold ">
+        <h1 className="text-white text-center pt-48 text-xl sm:text-2xl md:text-3xl font-bold">
           {title}
         </h1>
       </div>

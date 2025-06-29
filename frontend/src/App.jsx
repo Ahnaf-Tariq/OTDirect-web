@@ -21,6 +21,7 @@ import Karachi from "./pages/properties pages/Cities/Karachi";
 import Sofia from "./pages/properties pages/Cities/Sofia";
 import Salcia from "./pages/properties pages/Cities/Salcia";
 import AreaConverter from "./components/AreaConverter";
+import { ToastContainer } from 'react-toastify';
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -38,6 +39,7 @@ const App = () => {
           showLogin || showAreaConverter ? "overflow-hidden h-screen" : ""
         }
       >
+        <ToastContainer />
         <Navbar
           setShowLogin={setShowLogin}
           setShowAreaConverter={setShowAreaConverter}

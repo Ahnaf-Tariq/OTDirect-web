@@ -13,7 +13,7 @@ const Navbar = ({ setShowLogin, setShowAreaConverter }) => {
   return (
     <>
       <nav className="bg-[#7A1233] fixed top-0 left-0 w-full z-[999]">
-        <div className="flex justify-between items-center max-w-[1500px] mx-auto px-6">
+        <div className="flex justify-between items-center gap-2 max-w-[1500px] mx-auto px-6">
           <div className="">
             <img
               onClick={() => navigate("/")}
@@ -64,7 +64,7 @@ const Navbar = ({ setShowLogin, setShowAreaConverter }) => {
           </div>
           <div
             onClick={() => setSideBar(true)}
-            className="lg:hidden text-white text-4xl cursor-pointer"
+            className="lg:hidden text-white text-2xl sm:text-3xl md:text-4xl cursor-pointer"
           >
             <GiHamburgerMenu />
           </div>
