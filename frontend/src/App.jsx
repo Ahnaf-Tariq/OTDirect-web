@@ -20,31 +20,44 @@ import PrivacyPolicy from "./pages/pages/PrivacyPolicy";
 import Karachi from "./pages/properties pages/Cities/Karachi";
 import Sofia from "./pages/properties pages/Cities/Sofia";
 import Salcia from "./pages/properties pages/Cities/Salcia";
+import AreaConverter from "./components/AreaConverter";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
-
+  const [showAreaConverter, setShowAreaConverter] = useState(false);
   return (
     <>
       {showLogin ? <Login setShowLogin={setShowLogin} /> : <></>}
-      <div className={showLogin ? "overflow-hidden h-screen" : ""}>
-        <Navbar setShowLogin={setShowLogin} />
+      {showAreaConverter ? (
+        <AreaConverter setShowAreaConverter={setShowAreaConverter} />
+      ) : (
+        <></>
+      )}
+      <div
+        className={
+          showLogin || showAreaConverter ? "overflow-hidden h-screen" : ""
+        }
+      >
+        <Navbar
+          setShowLogin={setShowLogin}
+          setShowAreaConverter={setShowAreaConverter}
+        />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact-us" element={<Contact />} />
           <Route path="/about-us" element={<About />} />
-          <Route path="/properties/all-properties" element={<AllProperties />}/>
-          <Route path="/featured-properties" element={<FeaturedProperties />}/>
-          <Route path="/most-viewed-properties" element={<MostViewed />}/>
-          <Route path="/properties-nearby-city" element={<NearbyCities />}/>
-          <Route path="/most-favorite-properties" element={<MostFavourite />}/>
-          <Route path="/subscription-plan" element={<SubscriptionPlan />}/>
-          <Route path="/trends" element={<Trends />}/>
-          <Route path="/terms-and-condition" element={<TermsConditions />}/>
-          <Route path="/privacy-policy" element={<PrivacyPolicy />}/>
-          <Route path="/properties/city/Karachi" element={<Karachi />}/>
-          <Route path="/properties/city/Sofia" element={<Sofia />}/>
-          <Route path="/properties/city/Salcia" element={<Salcia />}/>
+          <Route path="/properties/all-properties" element={<AllProperties />} />
+          <Route path="/featured-properties" element={<FeaturedProperties />} />
+          <Route path="/most-viewed-properties" element={<MostViewed />} />
+          <Route path="/properties-nearby-city" element={<NearbyCities />} />
+          <Route path="/most-favorite-properties" element={<MostFavourite />} />
+          <Route path="/subscription-plan" element={<SubscriptionPlan />} />
+          <Route path="/trends" element={<Trends />} />
+          <Route path="/terms-and-condition" element={<TermsConditions />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/properties/city/Karachi" element={<Karachi />} />
+          <Route path="/properties/city/Sofia" element={<Sofia />} />
+          <Route path="/properties/city/Salcia" element={<Salcia />} />
         </Routes>
         <Footer />
       </div>

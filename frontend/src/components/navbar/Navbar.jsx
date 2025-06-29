@@ -6,7 +6,7 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import navLinks from "./navlinks";
 
-const Navbar = ({ setShowLogin }) => {
+const Navbar = ({ setShowLogin, setShowAreaConverter }) => {
   const [sideBar, setSideBar] = useState(false);
   const [sideBarLinks, setSideBarLinks] = useState(null);
   const navigate = useNavigate();
@@ -38,7 +38,13 @@ const Navbar = ({ setShowLogin }) => {
                           to={sublink.path}
                           className="block w-full p-[6px] hover:text-[#7A1233] text-base"
                         >
-                          {sublink.title}
+                          {sublink.title === "Area Converter" ? (
+                            <p onClick={() => setShowAreaConverter(true)}>
+                              {sublink.title}
+                            </p>
+                          ) : (
+                            <p>{sublink.title}</p>
+                          )}
                         </Link>
                       ))}
                     </div>
@@ -49,7 +55,10 @@ const Navbar = ({ setShowLogin }) => {
             <button className="rounded p-2 font-semibold text-[#7A1233] bg-white cursor-pointer">
               <span className="text-xl">+</span> Add Property
             </button>
-            <button onClick={()=>setShowLogin(true)} className="rounded p-2 text-2xl font-semibold text-[#7A1233] bg-white cursor-pointer">
+            <button
+              onClick={() => setShowLogin(true)}
+              className="rounded p-2 text-2xl font-semibold text-[#7A1233] bg-white cursor-pointer"
+            >
               <CgProfile />
             </button>
           </div>
@@ -87,7 +96,7 @@ const Navbar = ({ setShowLogin }) => {
                     // setSideBar(false)
                     setSideBarLinks(
                       sideBarLinks === links.title ? null : links.title
-                    )
+                    );
                   }}
                   className="flex items-center gap-1"
                 >
@@ -97,7 +106,9 @@ const Navbar = ({ setShowLogin }) => {
                 {links.subMenu && sideBarLinks === links.title && (
                   <div className="ml-4 mt-2 p-2 font-normal">
                     {links.subLinks.map((sublinks, ind) => (
-                      <li key={ind} className="text-sm">{sublinks.title}</li>
+                      <li key={ind} className="text-sm">
+                        {sublinks.title}
+                      </li>
                     ))}
                   </div>
                 )}
