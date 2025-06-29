@@ -1,19 +1,20 @@
 import React from "react";
 import TitleImage from "../../../components/TitleImage";
 import FilterCardCity from "../../../components/cards city/FilterCardCity";
+import PropertyCardsCity from "../../../components/cards city/PropertyCardsCity";
 
 const Salcia = () => {
   return (
     <div>
       <TitleImage title={"Properties Listed in Salcia"} />
-      <div className="max-w-[1450px] mx-auto flex justify-between gap-4 my-14">
-        <div className="w-full lg:w-1/4">
+      <div className="max-w-[1450px] mx-auto flex flex-col md:flex-row justify-between gap-4 px-4 my-14">
+        {/* left filter card */}
+        <div className="w-full md:w-1/4">
           <FilterCardCity />
         </div>
-        <div className="w-full lg:w-3/4">
-          <h1 className="border rounded-lg border-gray-300 font-semibold p-4">
-            24 Properties found
-          </h1>
+        {/* right property cards */}
+        <div className="w-full md:w-3/4">
+          <PropertyCardsCity />
         </div>
       </div>
     </div>

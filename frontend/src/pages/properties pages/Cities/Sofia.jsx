@@ -8,9 +8,11 @@ const Sofia = () => {
     <div>
       <TitleImage title={"Properties Listed in Sofia"} />
       <div className="max-w-[1450px] mx-auto flex flex-col md:flex-row justify-between gap-4 px-4 my-14">
+        {/* left filter card */}
         <div className="w-full md:w-1/4">
           <FilterCardCity />
         </div>
+        {/* right property cards */}
         <div className="w-full md:w-3/4">
           <PropertyCardsCity />
         </div>

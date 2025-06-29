@@ -13,7 +13,7 @@ const Karachi = () => {
           <FilterCardCity />
         </div>
         {/* right property cards */}
-        <div className="w-full md:w-3/4 space-y-4">
+        <div className="w-full md:w-3/4">
           <PropertyCardsCity />
         </div>
       </div>
