@@ -7,7 +7,7 @@ import Contact from "./pages/Contact";
 import About from "./pages/About";
 import "leaflet/dist/leaflet.css";
 import Footer from "./components/Footer";
-import Login from "./components/Login";
+import Login from "./components/login components/Login";
 import AllProperties from "./pages/properties pages/AllProperties";
 import FeaturedProperties from "./pages/properties pages/FeaturedProperties";
 import MostViewed from "./pages/properties pages/MostViewed";
