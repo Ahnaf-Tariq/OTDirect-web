@@ -19,22 +19,22 @@ const SignUp = ({ currentState, signUpOption }) => {
             placeholder="Enter Your Full Name"
           />
         </div>
-        <div>
+        {signUpOption !== 'Email' && <div>
           <p className="font-medium">Phone Number</p>
           <input
             className="w-full bg-gray-100 p-2 rounded-md focus:outline-none"
             type="number"
             placeholder="+92"
           />
-        </div>
-        <div>
+        </div>}
+        {signUpOption !== 'Phone' && <div>
           <p className="font-medium">Email</p>
           <input
             className="w-full bg-gray-100 p-2 rounded-md focus:outline-none"
             type="email"
             placeholder="Enter Your email"
           />
-        </div>
+        </div>}
         <div>
           <p className="font-medium">Password</p>
           <input
