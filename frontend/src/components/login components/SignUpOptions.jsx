@@ -28,19 +28,19 @@ const SignUpOptions = ({ currentState, setCurrentState, setSignUpOption }) => {
         </button>
         <button
           onClick={() => {setCurrentState("Sign Up"); setSignUpOption('Email')}}
-          className="w-full flex justify-center items-center gap-2 border border-[#7A1233] rounded-lg py-2 cursor-pointer"
+          className="w-full flex justify-center items-center gap-1 sm:gap-2 border border-[#7A1233] rounded-lg p-2 cursor-pointer"
         >
           <MdOutlineMail className="text-2xl" /> Continue With Email
         </button>
         <button
           onClick={() => {setCurrentState("Sign Up"); setSignUpOption('Phone')}}
-          className="w-full flex justify-center items-center gap-2 border border-[#7A1233] rounded-lg py-2 cursor-pointer"
+          className="w-full flex justify-center items-center gap-1 sm:gap-2 border border-[#7A1233] rounded-lg p-2 cursor-pointer"
         >
           <IoMdPhonePortrait className="text-2xl" /> Continue With Phone
         </button>
         <button
           onClick={() => {setCurrentState("Sign Up"); setSignUpOption('Email&Phone')}}
-          className="w-full flex justify-center items-center gap-2 border border-[#7A1233] rounded-lg py-2 cursor-pointer"
+          className="w-full flex justify-center items-center gap-1 sm:gap-2 border border-[#7A1233] rounded-lg p-2 cursor-pointer"
         >
           <FaAddressCard className="text-2xl" /> Continue with Email and Phone
         </button>
