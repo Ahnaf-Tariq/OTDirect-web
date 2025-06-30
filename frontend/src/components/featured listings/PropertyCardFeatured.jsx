@@ -1,12 +1,17 @@
 import { useRef } from "react";
 import Properties from "../../assets/assets";
-import { MdKeyboardArrowRight, MdOutlineBathroom, MdOutlineBedroomParent } from "react-icons/md";
+import {
+  MdKeyboardArrowRight,
+  MdOutlineBathroom,
+  MdOutlineBedroomParent,
+} from "react-icons/md";
 import { TfiRuler } from "react-icons/tfi";
 import { BsBuildings } from "react-icons/bs";
 import { BiMessageRoundedDetail } from "react-icons/bi";
 import { FaWhatsapp } from "react-icons/fa";
 import { IoIosCall } from "react-icons/io";
 import { MdKeyboardArrowLeft } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const PropertyCardFeatured = () => {
   const scrollRef = useRef(null);
@@ -43,7 +48,8 @@ const PropertyCardFeatured = () => {
         {Properties.filter(
           (item) => item.propertyType === "Featured Listings"
         ).map((item, index) => (
-          <div
+          <Link
+            to={`/properties/${item._id}`}
             key={index}
             className="flex-none w-[320px] h-[350px] bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer"
           >
@@ -90,7 +96,7 @@ const PropertyCardFeatured = () => {
                 </button>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

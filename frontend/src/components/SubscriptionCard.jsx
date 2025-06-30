@@ -2,7 +2,7 @@ import React from "react";
 
 const SubscriptionCard = ({ planType, price, billingCycle, propertyLimit }) => {
   return (
-    <div className="flex flex-col gap-9 rounded-xl shadow-xl p-6 w-full">
+    <div className="flex flex-col gap-9 rounded-xl shadow-xl p-6 w-full duration-300 hover:-translate-y-1 hover:shadow-2xl">
       <div className="bg-gray-100 text-sm px-3 py-1 rounded-full self-start font-medium">
         {planType}
       </div>

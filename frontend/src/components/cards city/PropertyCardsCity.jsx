@@ -4,6 +4,7 @@ import { FaBath, FaBed } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
 import { BsBuildings } from "react-icons/bs";
 import { FaKitchenSet } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const PropertyCardsCity = () => {
   return (
@@ -15,7 +16,8 @@ const PropertyCardsCity = () => {
         {Properties.filter(
           (item) => item.propertyType === "24 Properties found"
         ).map((item, index) => (
-          <div
+          <Link
+            to={`/properties/${item._id}`}
             key={index}
             className="flex flex-col lg:flex-row rounded-xl border border-gray-300 overflow-hidden mb-4 cursor-pointer"
           >
@@ -70,7 +72,7 @@ const PropertyCardsCity = () => {
                 <p className="font-semibold">Pkr {item.price}</p>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

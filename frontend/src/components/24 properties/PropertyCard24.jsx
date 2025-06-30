@@ -6,6 +6,7 @@ import { BsBuildings } from "react-icons/bs";
 import { BiMessageRoundedDetail } from "react-icons/bi";
 import { FaWhatsapp } from "react-icons/fa";
 import { IoIosCall } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const PropertyCard24 = () => {
   return (
@@ -13,7 +14,8 @@ const PropertyCard24 = () => {
       {Properties.filter(
         (item) => item.propertyType === "24 Properties found"
       ).map((item, index) => (
-        <div
+        <Link
+          to={`/properties/${item._id}`}
           key={index}
           className="w-full bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer"
         >
@@ -60,7 +62,7 @@ const PropertyCard24 = () => {
               </button>
             </div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );
