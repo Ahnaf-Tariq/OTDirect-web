@@ -1,15 +1,20 @@
 import React from "react";
+import { TiEdit } from "react-icons/ti";
 
 const SignUp = ({ currentState, signUpOption }) => {
   return (
     currentState === "Sign Up" && (
       <div className="flex flex-col gap-2">
-        <div>
+        <div className="relative w-24 h-24">
           <img
-            className="size-24 border-3 border-[#7A1233] rounded-full"
             src="https://otdirect.vercel.app/user_profile.png"
-            alt=""
+            alt="Profile"
+            className="border-3 border-[#7A1233] rounded-full"
           />
+          <div className="absolute bottom-0 right-0 text-white bg-[#7A1233] p-1 rounded-full border-2 border-white text-xl cursor-pointer">
+            {/* You can use an icon or image here for the edit */}
+            <TiEdit />
+          </div>
         </div>
         <div>
           <p className="font-medium">Full Name</p>
@@ -19,22 +24,26 @@ const SignUp = ({ currentState, signUpOption }) => {
             placeholder="Enter Your Full Name"
           />
         </div>
-        {signUpOption !== 'Email' && <div>
-          <p className="font-medium">Phone Number</p>
-          <input
-            className="w-full bg-gray-100 p-2 rounded-md focus:outline-none"
-            type="number"
-            placeholder="+92"
-          />
-        </div>}
-        {signUpOption !== 'Phone' && <div>
-          <p className="font-medium">Email</p>
-          <input
-            className="w-full bg-gray-100 p-2 rounded-md focus:outline-none"
-            type="email"
-            placeholder="Enter Your email"
-          />
-        </div>}
+        {signUpOption !== "Email" && (
+          <div>
+            <p className="font-medium">Phone Number</p>
+            <input
+              className="w-full bg-gray-100 p-2 rounded-md focus:outline-none"
+              type="number"
+              placeholder="+92"
+            />
+          </div>
+        )}
+        {signUpOption !== "Phone" && (
+          <div>
+            <p className="font-medium">Email</p>
+            <input
+              className="w-full bg-gray-100 p-2 rounded-md focus:outline-none"
+              type="email"
+              placeholder="Enter Your email"
+            />
+          </div>
+        )}
         <div>
           <p className="font-medium">Password</p>
           <input
