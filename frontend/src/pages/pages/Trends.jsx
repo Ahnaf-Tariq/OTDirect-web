@@ -6,7 +6,7 @@ const Trends = () => {
 
   return (
     <div className="mt-32 max-w-[1500px] mx-auto">
-      <div className="flex gap-4 mt-4">
+      <div className="flex gap-4 mt-4 mx-2">
         <p
           onClick={() => setColorFilter("Residential")}
           className={`${

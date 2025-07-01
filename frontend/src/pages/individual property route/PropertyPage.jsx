@@ -4,6 +4,7 @@ import Properties from "../../assets/assets";
 import TitleProperty from "./TitleProperty";
 import ImagePriceProperty from "./ImagePriceProperty";
 import DescriptionProperty from "./DescriptionProperty";
+import ErrorPage from "../ErrorPage";
 
 const PropertyPage = () => {
   const { id } = useParams();
@@ -25,7 +26,9 @@ const PropertyPage = () => {
       <DescriptionProperty productData={productData} />
     </div>
   ) : (
-    <div></div>
+    <div>
+      <ErrorPage />
+    </div>
   );
 };
 

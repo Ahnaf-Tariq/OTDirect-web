@@ -23,6 +23,7 @@ import Salcia from "./pages/properties pages/Cities/Salcia";
 import AreaConverter from "./components/AreaConverter";
 import { ToastContainer } from "react-toastify";
 import PropertyPage from "./pages/individual property route/PropertyPage";
+import ErrorPage from "./pages/ErrorPage";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -64,6 +65,7 @@ const App = () => {
           <Route path="/properties/city/Sofia" element={<Sofia />} />
           <Route path="/properties/city/Salcia" element={<Salcia />} />
           <Route path="/properties/:id" element={<PropertyPage />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer />
       </div>

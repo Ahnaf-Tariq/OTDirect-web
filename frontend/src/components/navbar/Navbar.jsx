@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { IoClose } from "react-icons/io5";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import navLinks from "./navlinks";
+import Sidebar from "./Sidebar";
 
 const Navbar = ({ setShowLogin, setShowAreaConverter, showLogin, showAreaConverter }) => {
   const [sideBar, setSideBar] = useState(false);
-  const [sideBarLinks, setSideBarLinks] = useState(null);
   const navigate = useNavigate();
+
   return (
     <>
       <nav className={`bg-[#7A1233] fixed top-0 left-0 w-full ${showLogin || showAreaConverter ? 'z-50' : 'z-[999]'}`}>
@@ -72,59 +72,7 @@ const Navbar = ({ setShowLogin, setShowAreaConverter, showLogin, showAreaConvert
       </nav>
 
       {/* ********************** Sidebar *************************** */}
-      {sideBar && (
-        <div
-          className={`fixed top-0 left-0 z-[999] h-full w-60 sm:w-96 bg-[#7A1233] text-white `}
-        >
-          <div className="flex justify-between items-center px-6 py-4 border-b border-orange-300">
-            <img
-              className="brightness-0 invert h-14"
-              src="https://otdirect.vercel.app/logoOTDirect.svg"
-              alt="logo"
-            />
-            <IoClose
-              className="text-2xl cursor-pointer"
-              onClick={() => setSideBar(false)}
-            />
-          </div>
-          <ul className="flex flex-col gap-4 p-6 text-lg font-semibold cursor-pointer">
-            {navLinks.map((links, index) => (
-              <div key={index}>
-                <NavLink
-                  to={links.path}
-                  onClick={() => {
-                    // setSideBar(false)
-                    setSideBarLinks(
-                      sideBarLinks === links.title ? null : links.title
-                    );
-                  }}
-                  className="flex items-center gap-1"
-                >
-                  {links.title}
-                  {links.subMenu && <RiArrowDropDownLine />}
-                </NavLink>
-                {links.subMenu && sideBarLinks === links.title && (
-                  <div className="ml-4 mt-2 p-2 font-normal">
-                    {links.subLinks.map((sublinks, ind) => (
-                      <li key={ind} className="text-sm">
-                        {sublinks.title}
-                      </li>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </ul>
-          <div className="px-6 flex gap-2">
-            <button className="rounded h-10 px-2 font-semibold text-[#7A1233] bg-white cursor-pointer">
-              <span className="text-xl">+</span> Add Property
-            </button>
-            <button className="rounded h-10 px-2 text-2xl font-semibold text-[#7A1233] bg-white cursor-pointer">
-              <CgProfile />
-            </button>
-          </div>
-        </div>
-      )}
+      <Sidebar sideBar={sideBar} setSideBar={setSideBar} setShowLogin={setShowLogin} setShowAreaConverter={setShowAreaConverter} />
     </>
   );
 };
