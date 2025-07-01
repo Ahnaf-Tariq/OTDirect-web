@@ -22,7 +22,7 @@ import Sofia from "./pages/properties pages/Cities/Sofia";
 import Salcia from "./pages/properties pages/Cities/Salcia";
 import AreaConverter from "./components/AreaConverter";
 import { ToastContainer } from "react-toastify";
-import PropertyPage from "./pages/PropertyPage";
+import PropertyPage from "./pages/individual property route/PropertyPage";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);

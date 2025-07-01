@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Properties from "../assets/assets";
+import Properties from "../../assets/assets";
 import { FaKitchenSet, FaShareFromSquare } from "react-icons/fa6";
 import {
   MdBathroom,
@@ -10,16 +10,11 @@ import {
 import { CiHeart } from "react-icons/ci";
 import { BsBuildings } from "react-icons/bs";
 import { TfiRuler } from "react-icons/tfi";
-import {
-  FaArrowRight,
-  FaCar,
-  FaParking,
-  FaRegClock,
-  FaWifi,
-} from "react-icons/fa";
+import { FaArrowRight, FaCar, FaRegClock, FaWifi } from "react-icons/fa";
 import { IoCall, IoChatboxOutline } from "react-icons/io5";
 import { FaWhatsapp } from "react-icons/fa";
 import { LuAirVent } from "react-icons/lu";
+import MapViewProperty from "./MapViewProperty";
 
 const PropertyPage = () => {
   const { id } = useParams();
@@ -86,7 +81,7 @@ const PropertyPage = () => {
           </div>
 
           <div className="flex flex-wrap gap-2">
-            <button className="flex-1 flex items-center justify-center gap-2 border-2 border-[#7A1233] text-[#7A1233] p-2 rounded-lg font-semibold text-base sm:text-lg cursor-pointer  hover:text-white hover:bg-[#7A1233]">
+            <button className="flex-1 flex items-center justify-center gap-2 border-2 border-[#7A1233] text-[#7A1233] p-2 rounded-lg font-semibold text-base sm:text-lg cursor-pointer hover:text-white hover:bg-[#7A1233]">
               <IoChatboxOutline /> Chat
             </button>
             <button className="flex-1 flex items-center justify-center gap-2 border-2 border-[#7A1233] text-[#7A1233] p-2 rounded-lg font-semibold text-base sm:text-lg cursor-pointer hover:text-white hover:bg-[#7A1233]">
@@ -111,6 +106,7 @@ const PropertyPage = () => {
       {/* description div */}
       <div className="w-full lg:max-w-[66%] p-4">
         {/* About Property */}
+
         <div>
           <h1 className="mb-3 font-semibold text-lg text-gray-700">
             About Property
@@ -153,7 +149,9 @@ const PropertyPage = () => {
           )}
         </div>
         <hr className="text-gray-400 my-4" />
+
         {/* Features & Ammenities */}
+
         <div>
           <h1 className="mb-3 font-semibold text-lg text-gray-700">
             Features & Ammenities
@@ -222,7 +220,9 @@ const PropertyPage = () => {
           </div>
         </div>
         <hr className="text-gray-400 my-4" />
+
         {/* Outdoor Facilities */}
+
         <div>
           <h1 className="mb-3 font-semibold text-lg text-gray-700">
             Outdoor Facilities
@@ -238,7 +238,9 @@ const PropertyPage = () => {
           </div>
         </div>
         <hr className="text-gray-400 my-4" />
+
         {/* bottom address div */}
+
         <div className="max-w-3xl flex justify-between gap-4">
           <div className="space-y-4 font-semibold">
             <h1>Address</h1>
@@ -252,27 +254,25 @@ const PropertyPage = () => {
             <p>Sindh</p>
             <p>Pakistan</p>
           </div>
-          {/* <div className="flex gap-2">
-                <h1>Address</h1>
-                <p>{productData.address}</p>
-            </div>
-            <div className="flex gap-2">
-                <h1>City</h1>
-                <p>Karachi</p>
-            </div>
-            <div className="flex gap-2">
-                <h1>State</h1>
-                <p>Sindh</p>
-            </div>
-            <div className="flex gap-2">
-                <h1>Country</h1>
-                <p>Pakistan</p>
-            </div> */}
+        </div>
+
+        {/* google map div */}
+
+        <div className="w-full mt-8">
+          <div className="h-[300px]">
+            <MapViewProperty />
+          </div>
+          <hr className="text-gray-400 my-4" />
+          <button className="w-full bg-[#7A1233] text-white rounded-lg font-semibold p-2 cursor-pointer">
+            Hire OT Consultant
+          </button>
         </div>
       </div>
     </div>
   ) : (
-    <div></div>
+    <div>
+      
+    </div>
   );
 };
 

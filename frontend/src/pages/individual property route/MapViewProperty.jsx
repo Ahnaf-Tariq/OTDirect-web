@@ -1,17 +1,11 @@
-import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  Popup,
-  ZoomControl,
-} from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
-const MapView = () => {
-  const position = [24.919150, 67.124450]; // Jauhar
+const MapViewProperty = () => {
+  const position = [24.817038, 67.064940]; // DHA phase 7
 
   return (
-    <div className="w-full h-[400px] sm:h-[500px] lg:h-full">
-      <div className="h-full rounded-xl overflow-hidden shadow-md z-0">
+    <div className="w-full h-full">
+      <div className="h-full rounded-xl overflow-hidden z-0">
         <MapContainer
           center={position}
           zoom={13}
@@ -24,13 +18,12 @@ const MapView = () => {
             url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
           />
           <Marker position={position}>
-            <Popup>Gulistan-e-Jauhar, Karachi</Popup>
+            <Popup>DHA, phase 7</Popup>
           </Marker>
-          <ZoomControl position="topright" />
         </MapContainer>
       </div>
     </div>
   );
 };
 
-export default MapView;
+export default MapViewProperty;
