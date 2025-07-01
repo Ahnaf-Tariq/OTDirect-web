@@ -4,6 +4,7 @@ import { FaSearch, FaFilter } from "react-icons/fa";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import FeaturedListings from "../../components/featured listings/FeaturedListings";
 import Properties24 from "../../components/24 properties/24Properties";
+import PropertyCardSponsored from "../../components/hero/PropertyCardSponsored";
 
 const AllProperties = () => {
   const [colorFilter, setColorFilter] = useState("");
@@ -78,6 +79,12 @@ const AllProperties = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="max-w-[1450px] mx-auto px-2">
+        <h1 className="text-lg sm:text-xl md:text-2xl font-semibold">
+          Sponsored Properties
+        </h1>
+        <PropertyCardSponsored />
       </div>
       <div>
         <FeaturedListings />

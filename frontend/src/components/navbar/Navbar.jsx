@@ -31,7 +31,7 @@ const Navbar = ({ setShowLogin, setShowAreaConverter, showLogin, showAreaConvert
                     {links.subMenu && <RiArrowDropDownLine />}
                   </NavLink>
                   {links.subMenu && (
-                    <div className="absolute z-[999] hidden group-hover:block border rounded-md shadow-lg w-52 bg-white text-gray-500 left-[-20px] p-2 ">
+                    <div className="absolute z-[999] hidden group-hover:block border rounded-md shadow-lg w-52 bg-white text-gray-500 left-[-20px] p-2">
                       {links.subLinks.map((sublink, ind) => (
                         <Link
                           key={ind}
