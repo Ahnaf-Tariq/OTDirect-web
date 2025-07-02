@@ -33,7 +33,11 @@ const Login = ({ setShowLogin }) => {
           <hr className="my-4 text-gray-400" />
 
           {/* Sign Up display div */}
-          <SignUp currentState={currentState} signUpOption={signUpOption} />
+          <SignUp
+            currentState={currentState}
+            signUpOption={signUpOption}
+            setShowLogin={setShowLogin}
+          />
 
           {/* Sign Up Options display div */}
           <SignUpOptions
