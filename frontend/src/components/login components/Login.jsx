@@ -3,7 +3,7 @@ import SignIn from "./SignIn";
 import SignUpOptions from "./SignUpOptions";
 import SignUp from "./SignUp";
 
-const Login = ({ setShowLogin }) => {
+const Login = ({ setToken, setShowLogin }) => {
   const [currentState, setCurrentState] = useState("Sign In");
   const [emailNum, setEmailNum] = useState("email");
   const [signUpOption, setSignUpOption] = useState("");
@@ -34,6 +34,7 @@ const Login = ({ setShowLogin }) => {
 
           {/* Sign Up display div */}
           <SignUp
+            setToken={setToken}
             currentState={currentState}
             signUpOption={signUpOption}
             setShowLogin={setShowLogin}
@@ -48,6 +49,7 @@ const Login = ({ setShowLogin }) => {
 
           {/* Sign In display div */}
           <SignIn
+            setToken={setToken}
             currentState={currentState}
             emailNum={emailNum}
             setEmailNum={setEmailNum}

@@ -28,9 +28,16 @@ import ErrorPage from "./pages/ErrorPage";
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
   const [showAreaConverter, setShowAreaConverter] = useState(false);
+  const [token, setToken] = useState(
+    localStorage.getItem("token") ? localStorage.getItem("token") : ""
+  );
   return (
     <>
-      {showLogin ? <Login setShowLogin={setShowLogin} /> : <></>}
+      {showLogin ? (
+        <Login setToken={setToken} setShowLogin={setShowLogin} />
+      ) : (
+        <></>
+      )}
       {showAreaConverter ? (
         <AreaConverter setShowAreaConverter={setShowAreaConverter} />
       ) : (
@@ -43,6 +50,8 @@ const App = () => {
       >
         <ToastContainer />
         <Navbar
+          token={token}
+          setToken={setToken}
           showLogin={showLogin}
           setShowLogin={setShowLogin}
           showAreaConverter={showAreaConverter}
@@ -52,7 +61,10 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/contact-us" element={<Contact />} />
           <Route path="/about-us" element={<About />} />
-          <Route path="/properties/all-properties" element={<AllProperties />} />
+          <Route
+            path="/properties/all-properties"
+            element={<AllProperties />}
+          />
           <Route path="/featured-properties" element={<FeaturedProperties />} />
           <Route path="/most-viewed-properties" element={<MostViewed />} />
           <Route path="/properties-nearby-city" element={<NearbyCities />} />

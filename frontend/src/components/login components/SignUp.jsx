@@ -5,7 +5,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { toast } from "react-toastify";
 
-const SignUp = ({ currentState, signUpOption, setShowLogin }) => {
+const SignUp = ({ setToken, currentState, signUpOption, setShowLogin }) => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -28,6 +28,7 @@ const SignUp = ({ currentState, signUpOption, setShowLogin }) => {
       // console.log(response.data);
       if (response.data.success) {
         localStorage.setItem("token", response.data.token);
+        setToken(response.data.token)
         setShowLogin(false);
         toast.success("Login succesfully");
       } else {

@@ -4,7 +4,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import axios from "axios";
 
-const SignIn = ({ currentState, emailNum, setEmailNum, setShowLogin }) => {
+const SignIn = ({ setToken, currentState, emailNum, setEmailNum, setShowLogin }) => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,6 +25,7 @@ const SignIn = ({ currentState, emailNum, setEmailNum, setShowLogin }) => {
       // console.log(response.data);
       if (response.data.success) {
         localStorage.setItem("token", response.data.token);
+        setToken(response.data.token)
         setShowLogin(false);
         toast.success('Login succesfully');
       } else {

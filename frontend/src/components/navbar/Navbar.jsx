@@ -6,18 +6,33 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import navLinks from "./navlinks";
 import Sidebar from "./Sidebar";
 import { toast } from "react-toastify";
+import { FaPlus } from "react-icons/fa";
+import { LuMessageSquareMore } from "react-icons/lu";
+import { IoIosNotifications } from "react-icons/io";
 
-const Navbar = ({ setShowLogin, setShowAreaConverter, showLogin, showAreaConverter }) => {
+const Navbar = ({
+  token,
+  setToken,
+  setShowLogin,
+  setShowAreaConverter,
+  showLogin,
+  showAreaConverter,
+}) => {
   const [sideBar, setSideBar] = useState(false);
   const navigate = useNavigate();
 
   const addProperty = () => {
-    localStorage.removeItem('token')
-    toast.success('Logout')
-  }
+    localStorage.removeItem("token");
+    setToken("");
+    toast.success("logout");
+  };
   return (
     <>
-      <nav className={`bg-[#7A1233] fixed top-0 left-0 w-full ${showLogin || showAreaConverter ? 'z-50' : 'z-[999]'}`}>
+      <nav
+        className={`bg-[#7A1233] fixed top-0 left-0 w-full ${
+          showLogin || showAreaConverter ? "z-50" : "z-[999]"
+        }`}
+      >
         <div className="flex justify-between items-center gap-2 max-w-[1500px] mx-auto px-6">
           <div className="">
             <img
@@ -57,15 +72,38 @@ const Navbar = ({ setShowLogin, setShowAreaConverter, showLogin, showAreaConvert
                 </div>
               ))}
             </ul>
-            <button onClick={addProperty} className="rounded p-2 font-semibold text-[#7A1233] bg-white cursor-pointer">
-              <span className="text-xl">+</span> Add Property
-            </button>
-            <button
-              onClick={() => setShowLogin(true)}
-              className="rounded p-2 text-2xl font-semibold text-[#7A1233] bg-white cursor-pointer"
-            >
-              <CgProfile />
-            </button>
+            <div className="flex gap-2">
+              <button
+                onClick={addProperty}
+                className="flex items-center gap-1 rounded-lg p-2 font-semibold text-[#7A1233] bg-white cursor-pointer"
+              >
+                <span className="text-xs">
+                  <FaPlus />
+                </span>{" "}
+                Add Property
+              </button>
+              {token && (
+                <>
+                  <button className="rounded-lg p-2 text-2xl font-semibold text-[#7A1233] bg-white cursor-pointer">
+                    <LuMessageSquareMore />
+                  </button>
+                  <button className="rounded-lg p-2 text-2xl font-semibold text-[#7A1233] bg-white cursor-pointer">
+                    <IoIosNotifications />
+                  </button>
+                </>
+              )}
+              <div className="relative">
+              <button
+                onClick={() => !token && setShowLogin(true)}
+                className="rounded-lg p-2 text-2xl font-semibold text-[#7A1233] bg-white cursor-pointer"
+              >
+                <CgProfile />
+              </button>
+              {token && <div className="absolute bottom-0 top-14 text-black right-0">
+                name
+              </div>}
+              </div>
+            </div>
           </div>
           <div
             onClick={() => setSideBar(true)}
@@ -77,7 +115,12 @@ const Navbar = ({ setShowLogin, setShowAreaConverter, showLogin, showAreaConvert
       </nav>
 
       {/* ********************** Sidebar *************************** */}
-      <Sidebar sideBar={sideBar} setSideBar={setSideBar} setShowLogin={setShowLogin} setShowAreaConverter={setShowAreaConverter} />
+      <Sidebar
+        sideBar={sideBar}
+        setSideBar={setSideBar}
+        setShowLogin={setShowLogin}
+        setShowAreaConverter={setShowAreaConverter}
+      />
     </>
   );
 };
