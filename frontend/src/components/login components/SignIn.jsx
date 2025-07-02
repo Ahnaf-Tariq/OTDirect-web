@@ -5,6 +5,8 @@ import "react-phone-input-2/lib/style.css";
 
 const SignIn = ({ currentState, emailNum, setEmailNum }) => {
   const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const googleLogin = () => {
     toast.error("Google sign-up canceled or failed.");
@@ -42,6 +44,8 @@ const SignIn = ({ currentState, emailNum, setEmailNum }) => {
             </p>
             {emailNum === "email" ? (
               <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full bg-gray-100 p-2 rounded-md focus:outline-none"
                 type="email"
                 placeholder="Enter your email"
@@ -50,7 +54,7 @@ const SignIn = ({ currentState, emailNum, setEmailNum }) => {
               <PhoneInput
                 country={"pk"} // default country
                 value={phone}
-                onChange={(phone) => setPhone(phone)}
+                onChange={(e) => setPhone(e)}
                 inputStyle={{
                   width: "100%",
                   backgroundColor: "#f3f4f6", // Tailwind's gray-100
@@ -65,6 +69,8 @@ const SignIn = ({ currentState, emailNum, setEmailNum }) => {
           <div>
             <p className="font-semibold">Password</p>
             <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full bg-gray-100 p-2 rounded-md focus:outline-none"
               type="password"
               placeholder="Enter your password"
