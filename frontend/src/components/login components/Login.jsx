@@ -47,6 +47,7 @@ const Login = ({ setShowLogin }) => {
             currentState={currentState}
             emailNum={emailNum}
             setEmailNum={setEmailNum}
+            setShowLogin={setShowLogin}
           />
 
           {/* login popup last */}

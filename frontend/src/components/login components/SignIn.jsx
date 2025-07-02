@@ -2,14 +2,38 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import axios from "axios";
 
-const SignIn = ({ currentState, emailNum, setEmailNum }) => {
+const SignIn = ({ currentState, emailNum, setEmailNum, setShowLogin }) => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const backendUrl = "http://localhost:4000";
 
   const googleLogin = () => {
     toast.error("Google sign-up canceled or failed.");
+  };
+
+  const signIn = async () => {
+    try {
+      const response = await axios.post(`${backendUrl}/api/user/login`, {
+        email,
+        phone,
+        password,
+      });
+
+      // console.log(response.data);
+      if (response.data.success) {
+        localStorage.setItem("token", response.data.token);
+        setShowLogin(false);
+        toast.success('Login succesfully');
+      } else {
+        console.log(response.data.msg);
+        toast.error(response.data.msg);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -76,7 +100,10 @@ const SignIn = ({ currentState, emailNum, setEmailNum }) => {
               placeholder="Enter your password"
             />
           </div>
-          <button className="w-full font-semibold bg-[#7A1233] text-white rounded-lg py-2 cursor-pointer">
+          <button
+            onClick={signIn}
+            className="w-full font-semibold bg-[#7A1233] text-white rounded-lg py-2 cursor-pointer"
+          >
             {currentState}
           </button>
         </div>

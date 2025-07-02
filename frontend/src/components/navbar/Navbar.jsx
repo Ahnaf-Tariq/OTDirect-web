@@ -5,11 +5,16 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import navLinks from "./navlinks";
 import Sidebar from "./Sidebar";
+import { toast } from "react-toastify";
 
 const Navbar = ({ setShowLogin, setShowAreaConverter, showLogin, showAreaConverter }) => {
   const [sideBar, setSideBar] = useState(false);
   const navigate = useNavigate();
 
+  const addProperty = () => {
+    localStorage.removeItem('token')
+    toast.success('Logout')
+  }
   return (
     <>
       <nav className={`bg-[#7A1233] fixed top-0 left-0 w-full ${showLogin || showAreaConverter ? 'z-50' : 'z-[999]'}`}>
@@ -52,7 +57,7 @@ const Navbar = ({ setShowLogin, setShowAreaConverter, showLogin, showAreaConvert
                 </div>
               ))}
             </ul>
-            <button className="rounded p-2 font-semibold text-[#7A1233] bg-white cursor-pointer">
+            <button onClick={addProperty} className="rounded p-2 font-semibold text-[#7A1233] bg-white cursor-pointer">
               <span className="text-xl">+</span> Add Property
             </button>
             <button
