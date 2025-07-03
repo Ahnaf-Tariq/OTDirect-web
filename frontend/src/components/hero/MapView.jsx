@@ -11,7 +11,7 @@ const MapView = () => {
 
   return (
     <div className="w-full h-[400px] sm:h-[500px] lg:h-full">
-      <div className="h-full rounded-xl overflow-hidden shadow-md z-0">
+      <div className="h-full rounded-xl overflow-hidden shadow-md z-0 relative">
         <MapContainer
           center={position}
           zoom={13}
