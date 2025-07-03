@@ -1,11 +1,10 @@
 import React from 'react'
+import Sidebar from './component/SidebarUser'
 
 const UserNotification = () => {
   return (
     <div className="">
-      <h1 className="text-center font-semibold text-2xl bg-red-500">
-        Notification
-      </h1>
+      <Sidebar />
     </div>
   )
 }
