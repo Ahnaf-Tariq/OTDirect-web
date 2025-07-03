@@ -4,15 +4,31 @@ import navLinks from "./navlinks";
 import { IoClose } from "react-icons/io5";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { CgProfile } from "react-icons/cg";
+import { IoIosLogOut } from "react-icons/io";
+import { toast } from "react-toastify";
 
 const Sidebar = ({
   token,
+  setToken,
   sideBar,
   setSideBar,
   setShowLogin,
   setShowAreaConverter,
 }) => {
   const [sideBarLinks, setSideBarLinks] = useState(null);
+
+  const login = () => {
+    if (!token) {
+      setSideBar(false);
+      setShowLogin(true);
+    }
+  };
+  const logOut = () => {
+    localStorage.removeItem("token");
+    setToken("");
+    toast.success("logout succesfully");
+    setSideBar(false);
+  };
   return (
     <div>
       {sideBar && (
@@ -30,13 +46,13 @@ const Sidebar = ({
               onClick={() => setSideBar(false)}
             />
           </div>
-          <ul className="flex flex-col gap-4 p-6 text-lg font-semibold cursor-pointer">
+          <ul className="flex flex-col gap-4 px-6 py-4 text-lg font-semibold cursor-pointer">
             {navLinks.map((links, index) => (
               <div key={index}>
                 <NavLink
                   to={links.path}
                   onClick={() => {
-                    // setSideBar(false)
+                    setSideBar(false);
                     setSideBarLinks(
                       sideBarLinks === links.title ? null : links.title
                     );
@@ -69,19 +85,33 @@ const Sidebar = ({
               </div>
             ))}
           </ul>
+          <div className="flex flex-col gap-4 px-6 pb-5 text-lg font-semibold cursor-pointer">
+            <p>Dashboard</p>
+            <p>Messages</p>
+          </div>
           <div className="px-6 flex gap-2">
-            <button className="rounded h-10 px-2 font-semibold text-[#7A1233] bg-white cursor-pointer">
+            <button
+              onClick={() => {
+                !token && setShowLogin(true);
+              }}
+              className="rounded h-10 px-2 font-semibold text-[#7A1233] bg-white cursor-pointer"
+            >
               <span className="text-xl">+</span> Add Property
             </button>
             <button
-              onClick={() => {
-                setSideBar(false);
-                setShowLogin(true);
-              }}
+              onClick={login}
               className="rounded h-10 px-2 text-2xl font-semibold text-[#7A1233] bg-white cursor-pointer"
             >
               <CgProfile />
             </button>
+          </div>
+          <div className="p-6 text-lg font-semibold cursor-pointer">
+            <p
+              onClick={logOut}
+              className="flex items-center gap-2 text-xl text-red-500"
+            >
+              Logout <IoIosLogOut className="text-2xl" />
+            </p>
           </div>
         </div>
       )}

@@ -153,6 +153,7 @@ const Navbar = ({
       {/* ********************** Sidebar *************************** */}
       <Sidebar
         token={token}
+        setToken={setToken}
         sideBar={sideBar}
         setSideBar={setSideBar}
         setShowLogin={setShowLogin}

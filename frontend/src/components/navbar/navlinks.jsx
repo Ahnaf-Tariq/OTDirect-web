@@ -24,6 +24,8 @@ const navLinks = [
   },
   { title: "Contact Us", path: "contact-us" },
   { title: "About Us", path: "about-us" },
+  // { title: "Dashboard", path: "about-us" },
+  // { title: "Messages", path: "about-us" },
 ];
 
 export default navLinks;
