@@ -24,6 +24,13 @@ import AreaConverter from "./components/AreaConverter";
 import { ToastContainer } from "react-toastify";
 import PropertyPage from "./pages/individual property route/PropertyPage";
 import ErrorPage from "./pages/ErrorPage";
+import Dashboard from "./pages/user pages/Dashboard";
+import BoostedProperties from "./pages/user pages/BoostedProperties";
+import AddProperty from "./pages/user pages/AddProperty";
+import Favourites from "./pages/user pages/Favourites";
+import Messages from "./pages/user pages/Messages";
+import MyProfile from "./pages/user pages/MyProfile";
+import UserNotification from "./pages/user pages/UserNotification";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -78,6 +85,14 @@ const App = () => {
           <Route path="/properties/city/Salcia" element={<Salcia />} />
           <Route path="/properties/:id" element={<PropertyPage />} />
           <Route path="*" element={<ErrorPage />} />
+          {/* user routes */}
+          <Route path="/user/dashboard" element={<Dashboard />} />
+          <Route path="/user/boosted-properties" element={<BoostedProperties />} />
+          <Route path="/user/properties" element={<AddProperty />} />
+          <Route path="/user/favorites-properties" element={<Favourites />} />
+          <Route path="/user/chat" element={<Messages />} />
+          <Route path="/user/profile" element={<MyProfile />} />
+          <Route path="/user/notifications" element={<UserNotification />} />
         </Routes>
         <Footer />
       </div>
