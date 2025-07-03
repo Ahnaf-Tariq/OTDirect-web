@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import navLinks from "./navlinks";
 import { IoClose } from "react-icons/io5";
 import { RiArrowDropDownLine } from "react-icons/ri";
@@ -16,13 +16,24 @@ const Sidebar = ({
   setShowAreaConverter,
 }) => {
   const [sideBarLinks, setSideBarLinks] = useState(null);
+  const navigate = useNavigate();
 
   const login = () => {
     if (!token) {
       setSideBar(false);
       setShowLogin(true);
+    } else {
+      navigate("/user/profile");
     }
   };
+  const addProperty = () => {
+    if (!token) {
+      setSideBar(false);
+      setShowLogin(true);
+    } else {
+      navigate("/user/properties");
+    }
+  }
   const logOut = () => {
     localStorage.removeItem("token");
     setToken("");
@@ -85,15 +96,15 @@ const Sidebar = ({
               </div>
             ))}
           </ul>
-          <div className="flex flex-col gap-4 px-6 pb-5 text-lg font-semibold cursor-pointer">
-            <p>Dashboard</p>
-            <p>Messages</p>
-          </div>
+          {token && (
+            <div className="flex flex-col gap-4 px-6 pb-5 text-lg font-semibold cursor-pointer">
+              <p onClick={() => navigate("/user/dashboard")}>Dashboard</p>
+              <p onClick={() => navigate("/user/chat")}>Messages</p>
+            </div>
+          )}
           <div className="px-6 flex gap-2">
             <button
-              onClick={() => {
-                !token && setShowLogin(true);
-              }}
+              onClick={addProperty}
               className="rounded h-10 px-2 font-semibold text-[#7A1233] bg-white cursor-pointer"
             >
               <span className="text-xl">+</span> Add Property
@@ -105,14 +116,16 @@ const Sidebar = ({
               <CgProfile />
             </button>
           </div>
-          <div className="p-6 text-lg font-semibold cursor-pointer">
-            <p
-              onClick={logOut}
-              className="flex items-center gap-2 text-xl text-red-500"
-            >
-              Logout <IoIosLogOut className="text-2xl" />
-            </p>
-          </div>
+          {token && (
+            <div className="p-6 text-lg font-semibold cursor-pointer">
+              <p
+                onClick={logOut}
+                className="flex items-center gap-2 text-xl text-red-500"
+              >
+                Logout <IoIosLogOut className="text-2xl" />
+              </p>
+            </div>
+          )}
         </div>
       )}
     </div>

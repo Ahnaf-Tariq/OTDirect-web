@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./index.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from "./components/navbar/Navbar";
 import Contact from "./pages/Contact";
@@ -38,6 +38,20 @@ const App = () => {
   const [token, setToken] = useState(
     localStorage.getItem("token") ? localStorage.getItem("token") : ""
   );
+  const location = useLocation();
+
+  const hideNavAndFooterRoutes = [
+    "/user/dashboard",
+    "/user/chat",
+    "/user/profile",
+    "/user/notifications",
+    "/user/favorites-properties",
+    "/user/properties",
+    "/user/boosted-properties",
+  ];
+
+  const hideNavAndFooter = hideNavAndFooterRoutes.includes(location.pathname);
+
   return (
     <>
       {showLogin ? (
@@ -56,14 +70,14 @@ const App = () => {
         }
       >
         <ToastContainer />
-        <Navbar
+        {!hideNavAndFooter && <Navbar
           token={token}
           setToken={setToken}
           showLogin={showLogin}
           setShowLogin={setShowLogin}
           showAreaConverter={showAreaConverter}
           setShowAreaConverter={setShowAreaConverter}
-        />
+        />}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact-us" element={<Contact />} />
@@ -87,14 +101,17 @@ const App = () => {
           <Route path="*" element={<ErrorPage />} />
           {/* user routes */}
           <Route path="/user/dashboard" element={<Dashboard />} />
-          <Route path="/user/boosted-properties" element={<BoostedProperties />} />
+          <Route
+            path="/user/boosted-properties"
+            element={<BoostedProperties />}
+          />
           <Route path="/user/properties" element={<AddProperty />} />
           <Route path="/user/favorites-properties" element={<Favourites />} />
           <Route path="/user/chat" element={<Messages />} />
           <Route path="/user/profile" element={<MyProfile />} />
           <Route path="/user/notifications" element={<UserNotification />} />
         </Routes>
-        <Footer />
+        {!hideNavAndFooter && <Footer />}
       </div>
     </>
   );

@@ -78,7 +78,7 @@ const Navbar = ({
             <div className="flex gap-2">
               <button
                 onClick={() => {
-                  !token && setShowLogin(true);
+                  !token ? setShowLogin(true) : navigate("/user/properties");
                 }}
                 className="flex items-center gap-1 rounded-lg p-2 font-semibold text-[#7A1233] bg-white cursor-pointer"
               >
@@ -89,10 +89,16 @@ const Navbar = ({
               </button>
               {token && (
                 <>
-                  <button className="rounded-lg p-2 text-2xl font-semibold text-[#7A1233] bg-white cursor-pointer">
+                  <button
+                    onClick={() => navigate("/user/chat")}
+                    className="rounded-lg p-2 text-2xl font-semibold text-[#7A1233] bg-white cursor-pointer"
+                  >
                     <LuMessageSquareMore />
                   </button>
-                  <button className="rounded-lg p-2 text-2xl font-semibold text-[#7A1233] bg-white cursor-pointer">
+                  <button
+                    onClick={() => navigate("/user/notifications")}
+                    className="rounded-lg p-2 text-2xl font-semibold text-[#7A1233] bg-white cursor-pointer"
+                  >
                     <IoIosNotifications />
                   </button>
                 </>
@@ -113,14 +119,20 @@ const Navbar = ({
                 {/* dashboard div */}
                 {token && dashboardShow ? (
                   <div className="absolute top-14 right-0 bg-[#7A1233] text-white p-3 rounded-lg shadow-md w-56 space-y-3">
-                    <div className="flex justify-between items-center cursor-pointer">
+                    <div
+                      onClick={() => navigate("/user/profile")}
+                      className="flex justify-between items-center cursor-pointer"
+                    >
                       <div className="flex items-center gap-2">
                         <CgProfile className="text-xl" />
                         <p className="font-semibold">Ahnaf Hamid</p>
                       </div>
                       <FaEdit />
                     </div>
-                    <div className="flex justify-between items-center cursor-pointer">
+                    <div
+                      onClick={() => navigate("/user/dashboard")}
+                      className="flex justify-between items-center cursor-pointer"
+                    >
                       <p className="font-semibold">Dashboard</p>
                       <MdOutlineKeyboardArrowRight className="text-2xl" />
                     </div>
