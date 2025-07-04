@@ -21,7 +21,7 @@ const Sidebar = ({ setToken }) => {
     }, 100);
   };
   return (
-    <aside className="w-[250px] min-h-screen bg-white border-r hidden lg:flex flex-col justify-between">
+    <aside className="w-[250px] min-h-screen bg-white border-r flex flex-col justify-between">
       {/* Logo */}
       <div>
         <div className="p-2 border-b bg-gray-100">

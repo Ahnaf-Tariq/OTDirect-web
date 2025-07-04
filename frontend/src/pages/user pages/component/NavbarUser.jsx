@@ -6,7 +6,7 @@ const NavbarUser = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="bg-white shadow-lg flex justify-between items-center">
+    <nav className="bg-white shadow-lg pr-10 flex justify-between items-center">
       <div className="bg-[#7A1233] border-6 border-white ml-[-20px] my-4 rounded-full p-3">
         <FaArrowLeft  className="cursor-pointer text-white"/>
       </div>
