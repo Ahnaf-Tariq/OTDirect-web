@@ -1,16 +1,17 @@
-import React from "react";
+import { useState } from "react";
 import Sidebar from "./component/SidebarUser";
 import NavbarUser from "./component/NavbarUser";
 import { FaHome, FaStar } from "react-icons/fa";
 
 const Dashboard = ({ setToken }) => {
+  const [sidebarDisplay,setSideBarDisplay] = useState(true)
   return (
     <div className="flex">
       <div>
-        <Sidebar setToken={setToken} />
+        <Sidebar setToken={setToken} sidebarDisplay={sidebarDisplay} setSideBarDisplay={setSideBarDisplay}/>
       </div>
       <div className="w-full">
-        <NavbarUser />
+        <NavbarUser sidebarDisplay={sidebarDisplay} setSideBarDisplay={setSideBarDisplay}/>
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col lg:flex-row justify-between gap-10">
             <div className="relative w-full lg:w-1/3 h-32 rounded-lg overflow-hidden">

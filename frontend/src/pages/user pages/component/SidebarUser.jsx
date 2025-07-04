@@ -7,7 +7,7 @@ import { FaRegHeart } from "react-icons/fa6";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { toast } from "react-toastify";
 
-const Sidebar = ({ setToken }) => {
+const Sidebar = ({ setToken, sidebarDisplay, setSideBarDisplay }) => {
   const navigate = useNavigate();
 
   const logOut = () => {
@@ -21,120 +21,124 @@ const Sidebar = ({ setToken }) => {
     }, 100);
   };
   return (
-    <aside className="w-[250px] min-h-screen bg-white border-r flex flex-col justify-between">
-      {/* Logo */}
-      <div>
-        <div className="p-2 border-b bg-gray-100">
-          <img
-            src="https://otdirect.vercel.app/logoOTDirect.svg"
-            alt="Logo"
-            onClick={() => navigate("/")}
-            className="w-32 cursor-pointer"
-          />
-        </div>
+    <div>
+      {sidebarDisplay && (
+        <div className="w-[250px] min-h-screen bg-white border-r">
+          {/* Logo */}
+          <div>
+            <div className="p-2 border-b bg-gray-100">
+              <img
+                src="https://otdirect.vercel.app/logoOTDirect.svg"
+                alt="Logo"
+                onClick={() => navigate("/")}
+                className="w-32 cursor-pointer"
+              />
+            </div>
 
-        {/* Nav Links */}
-        <nav className="flex flex-col py-7">
-          <NavLink
-            to="/user/dashboard"
-            className={({ isActive }) =>
-              `flex items-center gap-5 px-6 text-lg hover:bg-gray-100 ${
-                isActive && "bg-gray-100 rounded-r-xl"
-              }`
-            }
-          >
-            <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
-              <MdDashboard /> My Dashboard
-            </p>
-          </NavLink>
-          <NavLink
-            to="/user/boosted-properties"
-            className={({ isActive }) =>
-              `flex items-center gap-5 px-6 text-lg hover:bg-gray-100 ${
-                isActive && "bg-gray-100 rounded-r-xl"
-              }`
-            }
-          >
-            <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
-              <FaRocket /> Boosted Properties
-            </p>
-          </NavLink>
-          <NavLink
-            to="/user/properties"
-            className={({ isActive }) =>
-              `flex items-center gap-5 px-6 text-lg hover:bg-gray-100 ${
-                isActive && "bg-gray-100 rounded-r-xl"
-              }`
-            }
-          >
-            <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
-              <FaHome /> Add Property
-            </p>
-          </NavLink>
-          <NavLink
-            to="/user/favorites-properties"
-            className={({ isActive }) =>
-              `flex items-center gap-5 px-6 text-lg hover:bg-gray-100 ${
-                isActive && "bg-gray-100 rounded-r-xl"
-              }`
-            }
-          >
-            <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
-              <FaRegHeart /> Favourites
-            </p>
-          </NavLink>
-          <NavLink
-            to="/user/chat"
-            className={({ isActive }) =>
-              `flex items-center gap-5 px-6 text-lg hover:bg-gray-100 ${
-                isActive && "bg-gray-100 rounded-r-xl"
-              }`
-            }
-          >
-            <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
-              <LuMessageSquareMore /> Messages
-            </p>
-          </NavLink>
-          <NavLink
-            to="/user/profile"
-            className={({ isActive }) =>
-              `flex items-center gap-5 px-6 text-lg hover:bg-gray-100 ${
-                isActive && "bg-gray-100 rounded-r-xl"
-              }`
-            }
-          >
-            <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
-              <CgProfile /> My Profile
-            </p>
-          </NavLink>
-          <NavLink
-            to="/user/notifications"
-            className={({ isActive }) =>
-              `flex items-center gap-5 px-6 text-lg hover:bg-gray-100 ${
-                isActive && "bg-gray-100 rounded-r-xl"
-              }`
-            }
-          >
-            <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
-              <IoNotificationsOutline /> User Notification
-            </p>
-          </NavLink>
-          <Link className="flex items-center gap-5 px-6 text-lg hover:bg-gray-100">
-            <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
-              <FaRegTrashAlt /> Delete Account
-            </p>
-          </Link>
-          <Link
-            onClick={logOut}
-            className="flex items-center gap-5 px-6 text-lg hover:bg-gray-100"
-          >
-            <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
-              <FaSignOutAlt /> Logout
-            </p>
-          </Link>
-        </nav>
-      </div>
-    </aside>
+            {/* Nav Links */}
+            <nav className="flex flex-col py-7">
+              <NavLink
+                to="/user/dashboard"
+                className={({ isActive }) =>
+                  `flex items-center gap-5 px-6 text-lg hover:bg-gray-100 ${
+                    isActive && "bg-gray-100 rounded-r-xl"
+                  }`
+                }
+              >
+                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
+                  <MdDashboard /> My Dashboard
+                </p>
+              </NavLink>
+              <NavLink
+                to="/user/boosted-properties"
+                className={({ isActive }) =>
+                  `flex items-center gap-5 px-6 text-lg hover:bg-gray-100 ${
+                    isActive && "bg-gray-100 rounded-r-xl"
+                  }`
+                }
+              >
+                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
+                  <FaRocket /> Boosted Properties
+                </p>
+              </NavLink>
+              <NavLink
+                to="/user/properties"
+                className={({ isActive }) =>
+                  `flex items-center gap-5 px-6 text-lg hover:bg-gray-100 ${
+                    isActive && "bg-gray-100 rounded-r-xl"
+                  }`
+                }
+              >
+                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
+                  <FaHome /> Add Property
+                </p>
+              </NavLink>
+              <NavLink
+                to="/user/favorites-properties"
+                className={({ isActive }) =>
+                  `flex items-center gap-5 px-6 text-lg hover:bg-gray-100 ${
+                    isActive && "bg-gray-100 rounded-r-xl"
+                  }`
+                }
+              >
+                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
+                  <FaRegHeart /> Favourites
+                </p>
+              </NavLink>
+              <NavLink
+                to="/user/chat"
+                className={({ isActive }) =>
+                  `flex items-center gap-5 px-6 text-lg hover:bg-gray-100 ${
+                    isActive && "bg-gray-100 rounded-r-xl"
+                  }`
+                }
+              >
+                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
+                  <LuMessageSquareMore /> Messages
+                </p>
+              </NavLink>
+              <NavLink
+                to="/user/profile"
+                className={({ isActive }) =>
+                  `flex items-center gap-5 px-6 text-lg hover:bg-gray-100 ${
+                    isActive && "bg-gray-100 rounded-r-xl"
+                  }`
+                }
+              >
+                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
+                  <CgProfile /> My Profile
+                </p>
+              </NavLink>
+              <NavLink
+                to="/user/notifications"
+                className={({ isActive }) =>
+                  `flex items-center gap-5 px-6 text-lg hover:bg-gray-100 ${
+                    isActive && "bg-gray-100 rounded-r-xl"
+                  }`
+                }
+              >
+                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
+                  <IoNotificationsOutline /> User Notification
+                </p>
+              </NavLink>
+              <Link className="flex items-center gap-5 px-6 text-lg hover:bg-gray-100">
+                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
+                  <FaRegTrashAlt /> Delete Account
+                </p>
+              </Link>
+              <Link
+                onClick={logOut}
+                className="flex items-center gap-5 px-6 text-lg hover:bg-gray-100"
+              >
+                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
+                  <FaSignOutAlt /> Logout
+                </p>
+              </Link>
+            </nav>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 

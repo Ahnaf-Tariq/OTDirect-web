@@ -1,15 +1,25 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft, FaPlus } from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
 
-const NavbarUser = () => {
+const NavbarUser = ({ sidebarDisplay, setSideBarDisplay }) => {
   const navigate = useNavigate();
 
   return (
-    <nav className="bg-white shadow-lg pr-10 flex justify-between items-center">
-      <div className="bg-[#7A1233] border-6 border-white ml-[-20px] my-4 rounded-full p-3">
-        <FaArrowLeft  className="cursor-pointer text-white"/>
-      </div>
+    <nav className={`bg-white shadow-lg ${sidebarDisplay ? 'pr-10' : 'px-10'} flex justify-between items-center`}>
+      {sidebarDisplay ? (
+        <div
+          onClick={() => setSideBarDisplay(false)}
+          className="bg-[#7A1233] border-6 border-white ml-[-20px] my-4 rounded-full p-3 cursor-pointer"
+        >
+          <FaArrowLeft className="text-white" />
+        </div>
+      ) : (
+        <div onClick={() => setSideBarDisplay(true)} className="my-6">
+          <GiHamburgerMenu className="cursor-pointer text-xl" />
+        </div>
+      )}
       <div className="flex items-center gap-4">
         <div className="relative">
           <select
@@ -19,7 +29,10 @@ const NavbarUser = () => {
             <option value="English">English</option>
           </select>
         </div>
-        <button onClick={() => navigate('/user/properties')} className="bg-[#1D1E20] text-white text-sm font-semibold px-4 py-2 rounded-md flex items-center gap-1 cursor-pointer">
+        <button
+          onClick={() => navigate("/user/properties")}
+          className="bg-[#1D1E20] text-white text-sm font-semibold px-4 py-2 rounded-md flex items-center gap-1 cursor-pointer"
+        >
           <FaPlus size={12} />
           Add Property
         </button>
