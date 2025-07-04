@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import navLinks from "./navlinks";
 import { IoClose } from "react-icons/io5";
@@ -6,15 +6,17 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { CgProfile } from "react-icons/cg";
 import { IoIosLogOut } from "react-icons/io";
 import { toast } from "react-toastify";
+import { Context } from "../../context/Context";
 
-const Sidebar = ({
-  token,
-  setToken,
-  sideBar,
-  setSideBar,
-  setShowLogin,
-  setShowAreaConverter,
-}) => {
+const Sidebar = () => {
+  const {
+    token,
+    setToken,
+    sideBar,
+    setSideBar,
+    setShowLogin,
+    setShowAreaConverter,
+  } = useContext(Context);
   const [sideBarLinks, setSideBarLinks] = useState(null);
   const navigate = useNavigate();
 
@@ -33,7 +35,7 @@ const Sidebar = ({
     } else {
       navigate("/user/properties");
     }
-  }
+  };
   const logOut = () => {
     localStorage.removeItem("token");
     setToken("");

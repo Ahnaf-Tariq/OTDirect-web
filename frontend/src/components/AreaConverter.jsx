@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../context/Context";
 
-const AreaConverter = ({ setShowAreaConverter }) => {
+const AreaConverter = () => {
+  const { setShowAreaConverter } = useContext(Context);
   return (
     <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-[999]">
       <div className="bg-white w-[90%] sm:w-[80%] md:w-[70%] lg:max-w-lg max-h-[90vh] overflow-y-auto rounded-xl shadow-lg">

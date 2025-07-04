@@ -6,14 +6,16 @@ import { CgProfile } from "react-icons/cg";
 import { FaRegHeart } from "react-icons/fa6";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { toast } from "react-toastify";
+import { useContext } from "react";
+import { Context } from "../../../context/Context";
 
-const Sidebar = ({ setToken, sidebarDisplay, setSideBarDisplay }) => {
+const Sidebar = () => {
+  const { setToken, sidebarDisplayUser } = useContext(Context);
   const navigate = useNavigate();
 
   const logOut = () => {
     localStorage.removeItem("token");
     setToken("");
-    // navigate("/");
     toast.success("logout succesfully");
 
     setTimeout(() => {
@@ -22,7 +24,7 @@ const Sidebar = ({ setToken, sidebarDisplay, setSideBarDisplay }) => {
   };
   return (
     <div>
-      {sidebarDisplay && (
+      {sidebarDisplayUser && (
         <div className="w-[250px] min-h-screen bg-white border-r">
           {/* Logo */}
           <div>
@@ -141,19 +143,5 @@ const Sidebar = ({ setToken, sidebarDisplay, setSideBarDisplay }) => {
     </div>
   );
 };
-
-// const NavItem = ({ to, label, icon }) => (
-//   <NavLink
-//     to={to}
-//     className={({ isActive }) =>
-//       `flex items-center gap-3 px-6 py-3 text-sm font-medium hover:bg-gray-100 ${
-//         isActive ? "bg-gray-100 text-[#7A1233] font-semibold" : "text-gray-700"
-//       }`
-//     }
-//   >
-//     <span className="text-lg">{icon}</span>
-//     {label}
-//   </NavLink>
-// );
 
 export default Sidebar;

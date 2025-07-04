@@ -1,22 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft, FaPlus } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { Context } from "../../../context/Context";
 
-const NavbarUser = ({ sidebarDisplay, setSideBarDisplay }) => {
+const NavbarUser = () => {
+  const { sidebarDisplayUser, setSideBarDisplayUser } = useContext(Context);
   const navigate = useNavigate();
 
   return (
-    <nav className={`bg-white shadow-lg ${sidebarDisplay ? 'pr-10' : 'px-10'} flex justify-between items-center`}>
-      {sidebarDisplay ? (
+    <nav
+      className={`bg-white shadow-lg ${
+        sidebarDisplayUser ? "pr-10" : "px-10"
+      } flex justify-between items-center`}
+    >
+      {sidebarDisplayUser ? (
         <div
-          onClick={() => setSideBarDisplay(false)}
+          onClick={() => setSideBarDisplayUser(false)}
           className="bg-[#7A1233] border-6 border-white ml-[-20px] my-4 rounded-full p-3 cursor-pointer"
         >
           <FaArrowLeft className="text-white" />
         </div>
       ) : (
-        <div onClick={() => setSideBarDisplay(true)} className="my-6">
+        <div onClick={() => setSideBarDisplayUser(true)} className="my-6">
           <GiHamburgerMenu className="cursor-pointer text-xl" />
         </div>
       )}

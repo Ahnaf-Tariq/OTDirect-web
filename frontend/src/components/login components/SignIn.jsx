@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { toast } from "react-toastify";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import axios from "axios";
+import { Context } from "../../context/Context";
 
-const SignIn = ({ setToken, currentState, emailNum, setEmailNum, setShowLogin }) => {
+const SignIn = ({ currentState }) => {
+  const { setToken, setShowLogin, backendUrl } = useContext(Context);
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const backendUrl = "http://localhost:4000";
+  const [emailNum, setEmailNum] = useState("email");
 
   const googleLogin = () => {
     toast.error("Google sign-up canceled or failed.");
@@ -25,9 +27,9 @@ const SignIn = ({ setToken, currentState, emailNum, setEmailNum, setShowLogin })
       // console.log(response.data);
       if (response.data.success) {
         localStorage.setItem("token", response.data.token);
-        setToken(response.data.token)
+        setToken(response.data.token);
         setShowLogin(false);
-        toast.success('Login succesfully');
+        toast.success("Login succesfully");
       } else {
         console.log(response.data.msg);
         toast.error(response.data.msg);

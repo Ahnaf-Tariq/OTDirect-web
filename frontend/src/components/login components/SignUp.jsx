@@ -1,18 +1,19 @@
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { TiEdit } from "react-icons/ti";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { toast } from "react-toastify";
+import { Context } from "../../context/Context";
 
-const SignUp = ({ setToken, currentState, signUpOption, setShowLogin }) => {
+const SignUp = ({ currentState, signUpOption }) => {
+  const { setToken, setShowLogin, backendUrl } = useContext(Context);
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [location, setLocation] = useState("");
   const [address, setAddress] = useState("");
-  const backendUrl = "http://localhost:4000";
 
   const signUp = async () => {
     try {
@@ -28,12 +29,12 @@ const SignUp = ({ setToken, currentState, signUpOption, setShowLogin }) => {
       // console.log(response.data);
       if (response.data.success) {
         localStorage.setItem("token", response.data.token);
-        setToken(response.data.token)
+        setToken(response.data.token);
         setShowLogin(false);
         toast.success("Login succesfully");
       } else {
         console.log(response.data.msg);
-        toast.error(response.data.msg)
+        toast.error(response.data.msg);
       }
     } catch (error) {
       console.log(error);

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./index.css";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
@@ -31,13 +31,10 @@ import Favourites from "./pages/user pages/Favourites";
 import Messages from "./pages/user pages/Messages";
 import MyProfile from "./pages/user pages/MyProfile";
 import UserNotification from "./pages/user pages/UserNotification";
+import { Context } from "./context/Context";
 
 const App = () => {
-  const [showLogin, setShowLogin] = useState(false);
-  const [showAreaConverter, setShowAreaConverter] = useState(false);
-  const [token, setToken] = useState(
-    localStorage.getItem("token") ? localStorage.getItem("token") : ""
-  );
+  const { showLogin, showAreaConverter } = useContext(Context);
   const location = useLocation();
 
   const hideNavAndFooterRoutes = [
@@ -54,30 +51,15 @@ const App = () => {
 
   return (
     <>
-      {showLogin ? (
-        <Login setToken={setToken} setShowLogin={setShowLogin} />
-      ) : (
-        <></>
-      )}
-      {showAreaConverter ? (
-        <AreaConverter setShowAreaConverter={setShowAreaConverter} />
-      ) : (
-        <></>
-      )}
+      {showLogin ? <Login /> : <></>}
+      {showAreaConverter ? <AreaConverter /> : <></>}
       <div
         className={
           showLogin || showAreaConverter ? "overflow-hidden h-screen" : ""
         }
       >
         <ToastContainer />
-        {!hideNavAndFooter && <Navbar
-          token={token}
-          setToken={setToken}
-          showLogin={showLogin}
-          setShowLogin={setShowLogin}
-          showAreaConverter={showAreaConverter}
-          setShowAreaConverter={setShowAreaConverter}
-        />}
+        {!hideNavAndFooter && <Navbar />}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact-us" element={<Contact />} />
@@ -100,7 +82,7 @@ const App = () => {
           <Route path="/properties/:id" element={<PropertyPage />} />
           <Route path="*" element={<ErrorPage />} />
           {/* user routes */}
-          <Route path="/user/dashboard" element={<Dashboard setToken={setToken}/>} />
+          <Route path="/user/dashboard" element={<Dashboard />} />
           <Route
             path="/user/boosted-properties"
             element={<BoostedProperties />}

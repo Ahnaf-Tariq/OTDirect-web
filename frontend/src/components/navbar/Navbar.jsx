@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RiArrowDropDownLine } from "react-icons/ri";
@@ -10,16 +10,17 @@ import { FaEdit, FaPlus } from "react-icons/fa";
 import { LuMessageSquareMore } from "react-icons/lu";
 import { IoIosNotifications } from "react-icons/io";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { Context } from "../../context/Context";
 
-const Navbar = ({
-  token,
-  setToken,
-  setShowLogin,
-  setShowAreaConverter,
-  showLogin,
-  showAreaConverter,
-}) => {
-  const [sideBar, setSideBar] = useState(false);
+const Navbar = () => {
+  const {
+    token,
+    setToken,
+    setShowLogin,
+    setShowAreaConverter,
+    showLogin,
+    showAreaConverter,
+  } = useContext(Context);
   const [dashboardShow, setDashboardShow] = useState(false);
   const navigate = useNavigate();
 
@@ -163,14 +164,7 @@ const Navbar = ({
       </nav>
 
       {/* ********************** Sidebar *************************** */}
-      <Sidebar
-        token={token}
-        setToken={setToken}
-        sideBar={sideBar}
-        setSideBar={setSideBar}
-        setShowLogin={setShowLogin}
-        setShowAreaConverter={setShowAreaConverter}
-      />
+      <Sidebar />
     </>
   );
 };

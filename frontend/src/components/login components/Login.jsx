@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import SignIn from "./SignIn";
 import SignUpOptions from "./SignUpOptions";
 import SignUp from "./SignUp";
+import { Context } from "../../context/Context";
 
-const Login = ({ setToken, setShowLogin }) => {
+const Login = () => {
+  const { setShowLogin } = useContext(Context);
   const [currentState, setCurrentState] = useState("Sign In");
-  const [emailNum, setEmailNum] = useState("email");
   const [signUpOption, setSignUpOption] = useState("");
 
   return (
@@ -34,10 +35,8 @@ const Login = ({ setToken, setShowLogin }) => {
 
           {/* Sign Up display div */}
           <SignUp
-            setToken={setToken}
             currentState={currentState}
             signUpOption={signUpOption}
-            setShowLogin={setShowLogin}
           />
 
           {/* Sign Up Options display div */}
@@ -48,13 +47,7 @@ const Login = ({ setToken, setShowLogin }) => {
           />
 
           {/* Sign In display div */}
-          <SignIn
-            setToken={setToken}
-            currentState={currentState}
-            emailNum={emailNum}
-            setEmailNum={setEmailNum}
-            setShowLogin={setShowLogin}
-          />
+          <SignIn currentState={currentState} />
 
           {/* login popup last */}
           {currentState === "Sign In" ? (
