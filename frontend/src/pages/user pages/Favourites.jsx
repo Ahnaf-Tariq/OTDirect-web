@@ -3,8 +3,11 @@ import Sidebar from './component/SidebarUser'
 
 const Favourites = () => {
   return (
-    <div>
+    <div className="flex">
+      <div>
         <Sidebar />
+      </div>
+      <div></div>
     </div>
   )
 }

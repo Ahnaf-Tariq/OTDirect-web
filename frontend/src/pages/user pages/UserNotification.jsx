@@ -3,8 +3,11 @@ import Sidebar from './component/SidebarUser'
 
 const UserNotification = () => {
   return (
-    <div className="">
-      <Sidebar />
+    <div className="flex">
+      <div>
+        <Sidebar />
+      </div>
+      <div></div>
     </div>
   )
 }

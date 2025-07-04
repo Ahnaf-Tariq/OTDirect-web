@@ -3,8 +3,11 @@ import Sidebar from './component/SidebarUser'
 
 const Messages = () => {
   return (
-    <div className="">
-      <Sidebar />
+    <div className="flex">
+      <div>
+        <Sidebar />
+      </div>
+      <div></div>
     </div>
   )
 }

@@ -5,9 +5,21 @@ import { LuMessageSquareMore } from "react-icons/lu";
 import { CgProfile } from "react-icons/cg";
 import { FaRegHeart } from "react-icons/fa6";
 import { IoNotificationsOutline } from "react-icons/io5";
+import { toast } from "react-toastify";
 
-const Sidebar = () => {
+const Sidebar = ({ setToken }) => {
   const navigate = useNavigate();
+
+  const logOut = () => {
+    localStorage.removeItem("token");
+    setToken("");
+    // navigate("/");
+    toast.success("logout succesfully");
+
+    setTimeout(() => {
+      navigate("/");
+    }, 100);
+  };
   return (
     <aside className="w-[250px] min-h-screen bg-white border-r hidden lg:flex flex-col justify-between">
       {/* Logo */}
@@ -109,9 +121,13 @@ const Sidebar = () => {
           </NavLink>
           <Link className="flex items-center gap-5 px-6 text-lg hover:bg-gray-100">
             <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
-              <FaRegTrashAlt /> Delete Account</p>
+              <FaRegTrashAlt /> Delete Account
+            </p>
           </Link>
-          <Link className="flex items-center gap-5 px-6 text-lg hover:bg-gray-100">
+          <Link
+            onClick={logOut}
+            className="flex items-center gap-5 px-6 text-lg hover:bg-gray-100"
+          >
             <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
               <FaSignOutAlt /> Logout
             </p>

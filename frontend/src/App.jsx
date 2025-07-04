@@ -100,7 +100,7 @@ const App = () => {
           <Route path="/properties/:id" element={<PropertyPage />} />
           <Route path="*" element={<ErrorPage />} />
           {/* user routes */}
-          <Route path="/user/dashboard" element={<Dashboard />} />
+          <Route path="/user/dashboard" element={<Dashboard setToken={setToken}/>} />
           <Route
             path="/user/boosted-properties"
             element={<BoostedProperties />}
