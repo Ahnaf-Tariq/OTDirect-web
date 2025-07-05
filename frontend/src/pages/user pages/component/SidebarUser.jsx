@@ -25,7 +25,7 @@ const Sidebar = () => {
   return (
     <div>
       {sidebarDisplayUser && (
-        <div className="w-[250px] min-h-screen bg-white border-r">
+        <div className="w-[250px] min-h-screen border-r">
           {/* Logo */}
           <div>
             <div className="p-2 border-b bg-gray-100">

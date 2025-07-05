@@ -1,11 +1,13 @@
-import React, { useContext } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft, FaPlus } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Context } from "../../../context/Context";
+import { HiDotsVertical } from "react-icons/hi";
 
 const NavbarUser = () => {
   const { sidebarDisplayUser, setSideBarDisplayUser } = useContext(Context);
+  const [threeDot, setThreeDot] = useState(false);
   const navigate = useNavigate();
 
   return (
@@ -26,22 +28,46 @@ const NavbarUser = () => {
           <GiHamburgerMenu className="cursor-pointer text-xl" />
         </div>
       )}
-      <div className="flex items-center gap-4">
-        <div className="relative">
-          <select
-            className="bg-white p-3 outline-none cursor-pointer"
-            // defaultValue="English"
+      <div className="hidden md:block">
+        <div className="flex items-center gap-4">
+          <div className="relative">
+            <select
+              className="bg-white p-3 outline-none cursor-pointer"
+              // defaultValue="English"
+            >
+              <option value="English">English</option>
+            </select>
+          </div>
+          <button
+            onClick={() => navigate("/user/properties")}
+            className="bg-[#1D1E20] text-white text-sm font-semibold px-4 py-2 rounded-md flex items-center gap-1 cursor-pointer"
           >
-            <option value="English">English</option>
-          </select>
+            <FaPlus size={12} />
+            Add Property
+          </button>
         </div>
-        <button
-          onClick={() => navigate("/user/properties")}
-          className="bg-[#1D1E20] text-white text-sm font-semibold px-4 py-2 rounded-md flex items-center gap-1 cursor-pointer"
-        >
-          <FaPlus size={12} />
-          Add Property
-        </button>
+      </div>
+      <div className="relative md:hidden">
+        <p onClick={() => setThreeDot(!threeDot)} className="text-xl">
+          <HiDotsVertical />
+        </p>
+        {threeDot && (
+          <div className="absolute bg-white w-40 flex flex-col gap-4 items-center p-4 top-0 right-5 z-50">
+            <select
+              className="outline-none cursor-pointer"
+              // defaultValue="English"
+            >
+              <option value="English">English</option>
+            </select>
+            <button
+              onClick={() => navigate("/user/properties")}
+              className="flex items-center gap-2 cursor-pointer"
+            >
+              <FaPlus size={12} />
+              Add Property
+            </button>
+          </div>
+        )}
       </div>
     </nav>
   );
