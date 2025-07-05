@@ -36,7 +36,7 @@ const Dashboard = () => {
               <SidebarLogo />
             </div>
           )}
-          <div className="px-4">
+          <div className="px-4 w-full">
             <div className="flex flex-col lg:flex-row justify-between gap-10">
               <div className="relative w-full lg:w-1/3 h-32 rounded-lg overflow-hidden">
                 <img
