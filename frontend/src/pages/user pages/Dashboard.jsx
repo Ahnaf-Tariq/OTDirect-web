@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import Sidebar from "./component/SidebarUser";
 import NavbarUser from "./component/NavbarUser";
 import { FaHome, FaStar } from "react-icons/fa";
