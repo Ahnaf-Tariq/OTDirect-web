@@ -35,7 +35,7 @@ const Favourites = () => {
             </div>
           )}
           <div className="px-4 w-full">
-            <h1 className="text-2xl font-semibold p-6">Favourites</h1>
+            <h1 className="text-xl sm:text-2xl font-semibold p-3 sm:p-6">Favourites</h1>
             <div className="flex flex-col justify-center items-center gap-1 mt-18 px-2">
               <img
                 className="size-[130px] sm:size-[180px] mb-4"

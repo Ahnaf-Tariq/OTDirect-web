@@ -34,7 +34,18 @@ const UserNotification = () => {
               <SidebarLogo />
             </div>
           )}
-          <div className="px-4 w-full"></div>
+          <div className="px-4 w-full">
+            <h1 className="text-xl sm:text-2xl font-semibold p-3 sm:p-5">User Notification</h1>
+            <div className="border border-gray-300 rounded-md p-2">
+              <div className="bg-gray-100 font-semibold flex gap-2 justify-evenly p-2">
+                <p>Notifications</p>
+                <p>Date</p>
+              </div>
+              <div className="flex justify-center py-5 px-2">
+                <p>No Data Available</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
