@@ -11,17 +11,16 @@ const BoostedProperties = () => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1024) {
-        setSideBarDisplayUser(false); // show SidebarLogo
+        setSideBarDisplayUser(false);
       } else {
-        setSideBarDisplayUser(true); // show full Sidebar
+        setSideBarDisplayUser(true);
       }
     };
 
-    handleResize(); // call once on mount
+    handleResize();
 
-    window.addEventListener("resize", handleResize); // listen on resize
-
-    return () => window.removeEventListener("resize", handleResize); // clean up
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
     <div className="flex">
