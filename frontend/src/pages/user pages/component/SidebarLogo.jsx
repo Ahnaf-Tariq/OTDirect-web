@@ -31,7 +31,7 @@ const SidebarLogo = () => {
             `px-6 hover:bg-gray-100 ${isActive && "bg-gray-100 rounded-r-xl"}`
           }
         >
-          <p className="py-[10px] transition duration-300 hover:translate-x-2">
+          <p className="py-[10px] transition duration-300 hover:translate-x-2 hover:text-[#7A1233]">
             <MdDashboard className="text-2xl" />
           </p>
         </NavLink>
@@ -41,7 +41,7 @@ const SidebarLogo = () => {
             `px-6 hover:bg-gray-100 ${isActive && "bg-gray-100 rounded-r-xl"}`
           }
         >
-          <p className="py-[10px] transition duration-300 hover:translate-x-2">
+          <p className="py-[10px] transition duration-300 hover:translate-x-2 hover:text-[#7A1233]">
             <FaRocket className="text-2xl" />
           </p>
         </NavLink>
@@ -51,7 +51,7 @@ const SidebarLogo = () => {
             `px-6 hover:bg-gray-100 ${isActive && "bg-gray-100 rounded-r-xl"}`
           }
         >
-          <p className="py-[10px] transition duration-300 hover:translate-x-2">
+          <p className="py-[10px] transition duration-300 hover:translate-x-2 hover:text-[#7A1233]">
             <FaHome className="text-2xl" />
           </p>
         </NavLink>
@@ -61,7 +61,7 @@ const SidebarLogo = () => {
             `px-6 hover:bg-gray-100 ${isActive && "bg-gray-100 rounded-r-xl"}`
           }
         >
-          <p className="py-[10px] transition duration-300 hover:translate-x-2">
+          <p className="py-[10px] transition duration-300 hover:translate-x-2 hover:text-[#7A1233]">
             <FaRegHeart className="text-2xl" />
           </p>
         </NavLink>
@@ -71,7 +71,7 @@ const SidebarLogo = () => {
             `px-6 hover:bg-gray-100 ${isActive && "bg-gray-100 rounded-r-xl"}`
           }
         >
-          <p className="py-[10px] transition duration-300 hover:translate-x-2">
+          <p className="py-[10px] transition duration-300 hover:translate-x-2 hover:text-[#7A1233]">
             <LuMessageSquareMore className="text-2xl" />
           </p>
         </NavLink>
@@ -81,7 +81,7 @@ const SidebarLogo = () => {
             `px-6 hover:bg-gray-100 ${isActive && "bg-gray-100 rounded-r-xl"}`
           }
         >
-          <p className="py-[10px] transition duration-300 hover:translate-x-2">
+          <p className="py-[10px] transition duration-300 hover:translate-x-2 hover:text-[#7A1233]">
             <CgProfile className="text-2xl" />
           </p>
         </NavLink>
@@ -91,17 +91,17 @@ const SidebarLogo = () => {
             `px-6 hover:bg-gray-100 ${isActive && "bg-gray-100 rounded-r-xl"}`
           }
         >
-          <p className="py-[10px] transition duration-300 hover:translate-x-2">
+          <p className="py-[10px] transition duration-300 hover:translate-x-2 hover:text-[#7A1233]">
             <IoNotificationsOutline className="text-2xl" />
           </p>
         </NavLink>
         <Link className="px-6 hover:bg-gray-100">
-          <p className="py-[10px] transition duration-300 hover:translate-x-2">
+          <p className="py-[10px] transition duration-300 hover:translate-x-2 hover:text-[#7A1233]">
             <FaRegTrashAlt className="text-2xl" />
           </p>
         </Link>
         <Link onClick={logOut} className="px-6 hover:bg-gray-100">
-          <p className="py-[10px] transition duration-300 hover:translate-x-2">
+          <p className="py-[10px] transition duration-300 hover:translate-x-2 hover:text-[#7A1233]">
             <FaSignOutAlt className="text-2xl" />
           </p>
         </Link>

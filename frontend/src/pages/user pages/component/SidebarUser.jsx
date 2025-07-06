@@ -47,7 +47,7 @@ const Sidebar = () => {
                   }`
                 }
               >
-                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
+                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2 hover:text-[#7A1233]">
                   <MdDashboard /> My Dashboard
                 </p>
               </NavLink>
@@ -59,7 +59,7 @@ const Sidebar = () => {
                   }`
                 }
               >
-                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
+                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2 hover:text-[#7A1233]">
                   <FaRocket /> Boosted Properties
                 </p>
               </NavLink>
@@ -71,7 +71,7 @@ const Sidebar = () => {
                   }`
                 }
               >
-                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
+                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2 hover:text-[#7A1233]">
                   <FaHome /> Add Property
                 </p>
               </NavLink>
@@ -83,7 +83,7 @@ const Sidebar = () => {
                   }`
                 }
               >
-                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
+                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2 hover:text-[#7A1233]">
                   <FaRegHeart /> Favourites
                 </p>
               </NavLink>
@@ -95,7 +95,7 @@ const Sidebar = () => {
                   }`
                 }
               >
-                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
+                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2 hover:text-[#7A1233]">
                   <LuMessageSquareMore /> Messages
                 </p>
               </NavLink>
@@ -107,7 +107,7 @@ const Sidebar = () => {
                   }`
                 }
               >
-                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
+                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2 hover:text-[#7A1233]">
                   <CgProfile /> My Profile
                 </p>
               </NavLink>
@@ -119,12 +119,12 @@ const Sidebar = () => {
                   }`
                 }
               >
-                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
+                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2 hover:text-[#7A1233]">
                   <IoNotificationsOutline /> User Notification
                 </p>
               </NavLink>
               <Link className="flex items-center gap-5 px-6 text-lg hover:bg-gray-100">
-                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
+                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2 hover:text-[#7A1233]">
                   <FaRegTrashAlt /> Delete Account
                 </p>
               </Link>
@@ -132,7 +132,7 @@ const Sidebar = () => {
                 onClick={logOut}
                 className="flex items-center gap-5 px-6 text-lg hover:bg-gray-100"
               >
-                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2">
+                <p className="flex items-center gap-5 py-[10px] transition duration-300 hover:translate-x-2 hover:text-[#7A1233]">
                   <FaSignOutAlt /> Logout
                 </p>
               </Link>
