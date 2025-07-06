@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 import { Context } from "../../../context/Context";
 
 const SidebarLogo = () => {
-  const { setToken } = useContext(Context);
+  const { setToken, setDeleteAccount } = useContext(Context);
 
   const logOut = () => {
     localStorage.removeItem("token");
@@ -95,7 +95,10 @@ const SidebarLogo = () => {
             <IoNotificationsOutline className="text-2xl" />
           </p>
         </NavLink>
-        <Link className="px-6 hover:bg-gray-100">
+        <Link
+          onClick={() => setDeleteAccount(true)}
+          className="px-6 hover:bg-gray-100"
+        >
           <p className="py-[10px] transition duration-300 hover:translate-x-2 hover:text-[#7A1233]">
             <FaRegTrashAlt className="text-2xl" />
           </p>

@@ -9,6 +9,7 @@ const ShopContext = (props) => {
   const [showAreaConverter, setShowAreaConverter] = useState(false);
   const [sideBar, setSideBar] = useState(false);
   const [sidebarDisplayUser, setSideBarDisplayUser] = useState(true);
+  const [deleteAccount, setDeleteAccount] = useState(false);
 
   const value = {
     token,
@@ -22,6 +23,8 @@ const ShopContext = (props) => {
     setSideBar,
     sidebarDisplayUser,
     setSideBarDisplayUser,
+    deleteAccount,
+    setDeleteAccount,
   };
   return (
     <div>

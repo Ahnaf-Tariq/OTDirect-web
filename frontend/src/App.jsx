@@ -32,6 +32,7 @@ import Messages from "./pages/user pages/Messages";
 import MyProfile from "./pages/user pages/MyProfile";
 import UserNotification from "./pages/user pages/UserNotification";
 import { Context } from "./context/Context";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const App = () => {
   const { showLogin, showAreaConverter } = useContext(Context);
@@ -81,17 +82,17 @@ const App = () => {
           <Route path="/properties/city/Salcia" element={<Salcia />} />
           <Route path="/properties/:id" element={<PropertyPage />} />
           <Route path="*" element={<ErrorPage />} />
-          {/* user routes */}
-          <Route path="/user/dashboard" element={<Dashboard />} />
+          {/* user routes {protected routes} */}
+          <Route path="/user/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
           <Route
             path="/user/boosted-properties"
-            element={<BoostedProperties />}
+            element={<ProtectedRoute ><BoostedProperties /></ProtectedRoute >}
           />
-          <Route path="/user/properties" element={<AddProperty />} />
-          <Route path="/user/favorites-properties" element={<Favourites />} />
-          <Route path="/user/chat" element={<Messages />} />
-          <Route path="/user/profile" element={<MyProfile />} />
-          <Route path="/user/notifications" element={<UserNotification />} />
+          <Route path="/user/properties" element={<ProtectedRoute ><AddProperty /></ProtectedRoute>} />
+          <Route path="/user/favorites-properties" element={<ProtectedRoute><Favourites /></ProtectedRoute>} />
+          <Route path="/user/chat" element={<ProtectedRoute><Messages /></ProtectedRoute>} />
+          <Route path="/user/profile" element={<ProtectedRoute><MyProfile /></ProtectedRoute>} />
+          <Route path="/user/notifications" element={<ProtectedRoute><UserNotification /></ProtectedRoute>} />
         </Routes>
         {!hideNavAndFooter && <Footer />}
       </div>
