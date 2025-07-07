@@ -33,9 +33,10 @@ import MyProfile from "./pages/user pages/MyProfile";
 import UserNotification from "./pages/user pages/UserNotification";
 import { Context } from "./context/Context";
 import ProtectedRoute from "./components/ProtectedRoute";
+import DeleteAccount from "./pages/user pages/component/DeleteAccount";
 
 const App = () => {
-  const { showLogin, showAreaConverter } = useContext(Context);
+  const { showLogin, showAreaConverter, deleteAccount } = useContext(Context);
   const location = useLocation();
 
   const hideNavAndFooterRoutes = [
@@ -54,6 +55,7 @@ const App = () => {
     <>
       {showLogin ? <Login /> : <></>}
       {showAreaConverter ? <AreaConverter /> : <></>}
+      {deleteAccount ? <DeleteAccount /> : <></>}
       <div
         className={
           showLogin || showAreaConverter ? "overflow-hidden h-screen" : ""
