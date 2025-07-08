@@ -98,4 +98,14 @@ const registerUser = async (req, res) => {
   }
 };
 
-export { loginUser, registerUser };
+const deleteUser = async (req, res) => {
+  try {
+    await userModel.findByIdAndDelete(req.body.id);
+    res.json({ success: true, msg: "User deleted" });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, msg: error.message });
+  }
+};
+
+export { loginUser, registerUser, deleteUser };
