@@ -1,8 +1,28 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { Context } from "../../../context/Context";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const DeleteAccount = () => {
-  const { setDeleteAccount } = useContext(Context);
+  const { setDeleteAccount, backendUrl, token, setToken } = useContext(Context);
+
+  const deleteAccount = async () => {
+    try {
+      const response = await axios.post(`${backendUrl}/api/user/delete`, {token});
+
+      if (response.data.success) {
+        localStorage.removeItem("token");
+        setToken("");
+        setDeleteAccount(false);
+        toast.success(response.data.msg);
+      } else {
+        console.log(response.data.msg);
+        toast.error(response.data.msg);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="fixed inset-0 bg-black/50 z-[999] overflow-y-auto py-4">
       <div className="flex justify-center items-center min-h-full">
@@ -17,7 +37,10 @@ const DeleteAccount = () => {
             </p>
           </div>
           <div className="flex justify-center gap-2">
-            <button className="bg-[#7A1233] text-white py-2 px-5 rounded-md cursor-pointer">
+            <button
+              onClick={deleteAccount}
+              className="bg-[#7A1233] text-white py-2 px-5 rounded-md cursor-pointer"
+            >
               Yes
             </button>
             <button
