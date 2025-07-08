@@ -100,8 +100,17 @@ const registerUser = async (req, res) => {
 
 const deleteUser = async (req, res) => {
   try {
-    await userModel.findByIdAndDelete(req.body.id);
-    res.json({ success: true, msg: "User deleted" });
+    const { token } = req.body;
+
+    if (!token) {
+      res.json({ success: false, msg: "No token provided" });
+    }
+
+    const decodeToken = jwt.verify(token, process.env.JWT_SECRET);
+    const Id = decodeToken.id;
+
+    await userModel.findByIdAndDelete(Id);
+    res.json({ success: true, msg: "Account deleted" });
   } catch (error) {
     console.log(error);
     res.json({ success: false, msg: error.message });
