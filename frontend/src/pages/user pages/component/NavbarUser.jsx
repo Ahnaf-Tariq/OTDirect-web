@@ -12,9 +12,7 @@ const NavbarUser = () => {
 
   return (
     <nav
-      className={`bg-white shadow-lg ${
-        sidebarDisplayUser ? "pr-10" : "px-10"
-      } flex justify-between items-center`}
+      className={`bg-white shadow-lg px-4 flex justify-between items-center`}
     >
       {sidebarDisplayUser ? (
         <div
