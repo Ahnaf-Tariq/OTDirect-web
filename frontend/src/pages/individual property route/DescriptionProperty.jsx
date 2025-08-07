@@ -6,8 +6,7 @@ import { FaArrowRight, FaCar, FaWifi } from "react-icons/fa";
 import { LuAirVent } from "react-icons/lu";
 
 const DescriptionProperty = ({ productData }) => {
-    
-      const [showDesc, setShowDesc] = useState(false);
+  const [showDesc, setShowDesc] = useState(false);
   return (
     // {/* description div */}
     <div className="w-full lg:max-w-[66%] p-4">
