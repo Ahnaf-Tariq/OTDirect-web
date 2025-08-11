@@ -62,7 +62,9 @@ const AreaConverter = () => {
         </div>
         <div className="flex justify-between items-center gap-2 p-4">
           <h1 className="text-xl sm:text-2xl">Convert Area</h1>
-          <p className="text-sm sm:text-base text-gray-500">Enter the value and desired units:</p>
+          <p className="text-sm sm:text-base text-gray-500">
+            Enter the value and desired units:
+          </p>
         </div>
         <hr className="mx-4 text-gray-400" />
         <div className="flex flex-col md:flex-row gap-2 py-6 mb-2 border-b-2 border-b-gray-200">

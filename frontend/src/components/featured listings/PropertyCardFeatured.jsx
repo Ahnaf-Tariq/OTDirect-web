@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Properties from "../../assets/assets";
 import {
   MdKeyboardArrowRight,
@@ -12,9 +12,11 @@ import { FaWhatsapp } from "react-icons/fa";
 import { IoIosCall } from "react-icons/io";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
 
 const PropertyCardFeatured = () => {
   const scrollRef = useRef(null);
+  const [fav, setFav] = useState(false);
 
   const scrollLeft = () => {
     scrollRef.current.scrollBy({ left: -350 });
@@ -53,11 +55,19 @@ const PropertyCardFeatured = () => {
             key={index}
             className="flex-none w-[320px] h-[350px] bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer"
           >
-            <img
-              className="w-full h-[156px] hover:opacity-70 object-cover"
-              src={item.image}
-              alt=""
-            />
+            <div className="relative">
+              <img
+                className="w-full h-[156px] hover:opacity-70 object-cover "
+                src={item.image}
+                alt=""
+              />
+              <div
+                onClick={() => setFav(!fav)}
+                className="absolute right-0 top-0 bg-white rounded-full p-2"
+              >
+                {!fav ? <FaRegHeart /> : <FaHeart />}
+              </div>
+            </div>
             <div className="flex flex-col gap-3 p-2">
               <div className="flex justify-between gap-2">
                 <h2 className="text-base font-semibold line-clamp-2 max-w-40">
