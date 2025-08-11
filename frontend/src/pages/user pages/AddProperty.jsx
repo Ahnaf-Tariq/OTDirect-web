@@ -6,14 +6,6 @@ import SidebarLogo from "./component/SidebarLogo";
 
 const AddProperty = () => {
   const { sidebarDisplayUser, setSideBarDisplayUser } = useContext(Context);
-  const [propertyTypes, setPropertyTypes] = useState(true);
-  const [categories, setCategories] = useState(false);
-  const [propertyDetails, setPropertyDetails] = useState(false);
-  const [facilities, setFacilities] = useState(false);
-  const [outdoorFacilities, setOutdoorFacilities] = useState(false);
-  const [location, setLocation] = useState(false);
-  const [image, setImage] = useState(false);
-  const [SEO, setSEO] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -72,37 +64,6 @@ const AddProperty = () => {
                 </div>
                 <hr className="border-gray-300" />
               </div>
-
-              {/* Content area */}
-              {propertyTypes === true && (
-                <div className="max-w-7xl mx-auto mt-8 min-h-[500px]">
-                  <div className="bg-white p-6 rounded-lg shadow">
-                    <h2 className="text-lg font-semibold mb-4">
-                      Property Type
-                    </h2>
-                    <div className="flex gap-6">
-                      <label className="flex items-center gap-2">
-                        <input type="radio" name="property-type" />
-                        Commercial
-                      </label>
-                      <label className="flex items-center gap-2">
-                        <input type="radio" name="property-type" />
-                        Residential
-                      </label>
-                      <label className="flex items-center gap-2">
-                        <input type="radio" name="property-type" />
-                        Industrial
-                      </label>
-                    </div>
-
-                    <div className="mt-8">
-                      <button onClick={()=>setPropertyTypes(false)} className="bg-[#7A1233] text-white px-6 py-2 rounded-md">
-                        Next
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              )}
             </div>
           </div>
         </div>
