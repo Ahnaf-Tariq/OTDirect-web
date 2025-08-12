@@ -57,14 +57,17 @@ const AddProperty = () => {
                     <p
                       onClick={() => setActiveTab(index)}
                       key={index}
-                      className="py-2 font-medium cursor-pointer hover:text-blue-600 whitespace-nowrap flex-shrink-0"
+                      className={`py-2 font-medium cursor-pointer whitesspace-nowrap flex-shrink-0 ${
+                        activeTab === index &&
+                        "text-[#7A1233] border-b-2 border-[#7A1233]"
+                      }`}
                     >
                       {tab}
                     </p>
                   ))}
                 </div>
               </div>
-              <hr className="border-gray-300 mx-4" />
+              <hr className="border-gray-300 mx-4"/>
             </div>
 
             <AddPropertyDetails activeTab={activeTab} />
