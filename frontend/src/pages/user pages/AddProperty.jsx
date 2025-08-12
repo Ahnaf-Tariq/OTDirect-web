@@ -3,9 +3,11 @@ import Sidebar from "./component/SidebarUser";
 import NavbarUser from "./component/NavbarUser";
 import { Context } from "../../context/Context";
 import SidebarLogo from "./component/SidebarLogo";
+import AddPropertyDetails from "./component/AddPropertyDetails";
 
 const AddProperty = () => {
   const { sidebarDisplayUser, setSideBarDisplayUser } = useContext(Context);
+  const [activeTab, setActiveTab] = useState(0);
 
   useEffect(() => {
     const handleResize = () => {
@@ -42,29 +44,38 @@ const AddProperty = () => {
             </div>
           )}
 
-          <div className="flex-1 overflow-auto">
-            <div className="px-4 py-6">
-              <h1 className="text-xl sm:text-2xl font-semibold p-4 pb-6">
-                Add Property
-              </h1>
+          <div className="relative flex-1 px-4 py-6">
+            <h1 className="text-xl sm:text-2xl font-semibold p-4 pb-6">
+              Add Property
+            </h1>
 
-              {/* Fixed tab container */}
-              <div className="w-full sticky top-0 bg-white z-10 pt-2">
-                <div className="overflow-x-auto pb-2">
-                  <div className="flex gap-4 w-max px-4">
-                    {propertyTabs.map((tab, index) => (
-                      <p
-                        key={index}
-                        className="py-2 font-medium cursor-pointer hover:text-blue-600 whitespace-nowrap"
-                      >
-                        {tab}
-                      </p>
-                    ))}
-                  </div>
+            {/* Fixed tab container */}
+            <div className="w-full pt-2">
+              <div className="overflow-x-scroll scrollbar-hide">
+                <div className="flex gap-8 min-w-max px-4">
+                  {propertyTabs.map((tab, index) => (
+                    <p
+                      onClick={() => setActiveTab(index)}
+                      key={index}
+                      className="py-2 font-medium cursor-pointer hover:text-blue-600 whitespace-nowrap flex-shrink-0"
+                    >
+                      {tab}
+                    </p>
+                  ))}
                 </div>
-                <hr className="border-gray-300" />
               </div>
+              <hr className="border-gray-300 mx-4" />
             </div>
+
+            <AddPropertyDetails activeTab={activeTab} />
+
+            {/* next button */}
+            <button
+              onClick={() => setActiveTab(activeTab + 1)}
+              className="absolute bottom-30 right-8 text-white bg-[#7A1233] px-6 py-2 rounded-md cursor-pointer"
+            >
+              Next
+            </button>
           </div>
         </div>
       </div>

@@ -18,6 +18,7 @@ const Navbar = () => {
     setToken,
     setShowLogin,
     setShowAreaConverter,
+    setSideBar,
     showLogin,
     showAreaConverter,
   } = useContext(Context);

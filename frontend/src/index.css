@@ -14,3 +14,7 @@ NavLink.active{
 .active-link {
   border-bottom: 2px solid white;
 }
+
+.scrollbar-hide::-webkit-scrollbar{
+    display: none;
+}

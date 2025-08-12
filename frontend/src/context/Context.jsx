@@ -4,9 +4,7 @@ export const Context = createContext();
 
 const ShopContext = (props) => {
   const backendUrl = "http://localhost:4000";
-  const [token, setToken] = useState(
-    localStorage.getItem("token") ? localStorage.getItem("token") : ""
-  );
+  const [token, setToken] = useState(localStorage.getItem("token") ? localStorage.getItem("token") : "");
   const [showLogin, setShowLogin] = useState(false);
   const [showAreaConverter, setShowAreaConverter] = useState(false);
   const [sideBar, setSideBar] = useState(false);
