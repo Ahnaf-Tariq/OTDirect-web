@@ -30,6 +30,14 @@ const AddProperty = () => {
     "SEO Settings",
   ];
 
+  const submitProperty = async () => {
+    try {
+      alert('functionality not integrated')
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
   return (
     <div className="flex h-screen overflow-hidden">
       <Sidebar />
@@ -67,17 +75,19 @@ const AddProperty = () => {
                   ))}
                 </div>
               </div>
-              <hr className="border-gray-300 mx-4"/>
+              <hr className="border-gray-300 mx-4" />
             </div>
 
             <AddPropertyDetails activeTab={activeTab} />
 
             {/* next button */}
             <button
-              onClick={() => setActiveTab(activeTab + 1)}
-              className="absolute bottom-30 right-8 text-white bg-[#7A1233] px-6 py-2 rounded-md cursor-pointer"
+              onClick={() =>
+                activeTab === 7 ? submitProperty() : setActiveTab(activeTab + 1)
+              }
+              className="absolute bottom-30 right-8 text-white bg-[#7A1233] font-sans px-6 py-2 rounded-md cursor-pointer"
             >
-              Next
+              {activeTab === 7 ? "Submit Property" : "Next"}
             </button>
           </div>
         </div>
